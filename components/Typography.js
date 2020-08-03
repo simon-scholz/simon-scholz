@@ -21,8 +21,11 @@ export const Heading1 = styled.h1`
 
 export const Heading2 = styled.h3`
   ${heading};
+  font-weight: ${theme.fontWeights.bold};
   font-size: ${theme.fontSizes[4]};
   letter-spacing: -0.6px;
+  margin-bottom: ${theme.space[2]};
+  margin-top: ${theme.space[5]}
 `
 
 
@@ -40,7 +43,7 @@ export const Heading3 = styled.h5`
     font-weight: ${theme.fontWeights.body};
     line-height: ${theme.lineHeights.bodyLong};
     letter-spacing: -0.1px;
-    color: ${theme.colors.darkGrey};
+    color: ${theme.colors.grey};
     transition: opacity 0.3s;
     margin-bottom: 0px;
     a {

@@ -12,6 +12,8 @@ export const COLORS = {
     slate: 'rgb(66, 70, 83)',
     concrete: 'rgb(102, 116, 136)',
     silver: 'rgb(132, 146, 166)',
+    blue50: '#007AFF',
+    blue60: '#0062cc',
   'bg-primary': {
     light: '#fcfcfc',
     dark: '#050505',

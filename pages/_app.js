@@ -5,16 +5,9 @@ import theme from '../styles/theme'
 import styled from "styled-components";
 
 import { P, A } from '../components/Typography'
+import { Button } from '../components/Actions'
 import Footer from '../patterns/Footer';
 
-export function CornerLinks() {
-  return(
-    <>
-    <Link href="/" ><A style={{position: "absolute", top: 8, left: 16}} href="#">Simon Scholz</A></Link>
-    <A style={{position: "absolute", top: 8, right: 16}} href="mailto:simonscholz@outlook.com">E-Mail</A>
-    </>
-  )
-}
 
 const Header = styled.header`
   position: fixed;
@@ -27,10 +20,12 @@ const Header = styled.header`
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
+  display: flex;
   align-items: center;
   flex-direction: row;
   padding: 4px 8px;
   margin: 0px;
+  height: 56px;
 `
 
 const HeaderBackground = styled.div`
@@ -40,16 +35,22 @@ const HeaderBackground = styled.div`
   left: 0px;
   top: 0px;
   z-index: -1;
-  background: red;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 0px;
   backdrop-filter: saturate(180%) blur(20px);
+`
+
+const ContactButton = styled(Button)`
+  padding: 6px 16px;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: 8px;
 `
 
 export function TopMenu() {
   return(
     <Header>
-      <HeaderBackground>
-      </HeaderBackground>
+      <ContactButton variant="cta">Contact</ContactButton>
+      <HeaderBackground />
     </Header>
   )
 }
@@ -58,9 +59,12 @@ const Content = styled.div`
   margin-top: 40px;
 `
 
+
+
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
+      <TopMenu />
       <Content>
         <Component {...pageProps} />
       </Content>
