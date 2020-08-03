@@ -38,7 +38,6 @@ const ButtonContent = styled.div`
 
 export const Button = styled.button`
 ${buttonBase}
-background: transparent;
 border: 1px solid ${props =>
   props.variant==="cta" && theme.colors["accent-blue"].light
   || theme.colors.smokeDarker
@@ -55,6 +54,7 @@ background: ${props =>
   props.variant==="cta" && theme.colors["accent-blue"].light
   || "none"
 };
+transition: background color border border-style ${theme.animations.hover};
 &:hover {
   background: ${props =>
     props.variant==="cta" && theme.colors["text-primary"].dark
@@ -72,6 +72,7 @@ background: ${props =>
     props.variant==="text" && "hidden"
     || "solid"
   };
+  transition: background color border border-style ${theme.animations.hover};
 }
 &:focus {
   outline: none;

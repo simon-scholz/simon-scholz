@@ -1,18 +1,19 @@
 import styled, { css, withTheme } from "styled-components";
 import { Dribbble, Behance, Twitter, Substack } from "../components/SocialIcons";
+import theme from '../styles/theme'
 
 const clickable = css`
   padding: 16px;
   cursor: pointer;
   .icon {
-    fill: ${props => props.theme.colors.blue50};
+    fill: ${theme.colors.blue50};
     fill-opacity: 0.4;
   }
   &:hover {
     .icon {
-      /* fill: ${props => props.theme.colors.blue60}; */
+      /* fill: ${theme.colors.blue60}; */
       fill-opacity: 1;
-      transition: fill-opacity 500ms ease;
+      transition: fill-opacity ${theme.animations.hover};
     }
   }
 `
@@ -33,6 +34,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-top: 1px solid ${props => props.theme.colors.snowDarker};
 `
 
 function Footer() {

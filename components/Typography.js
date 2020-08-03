@@ -22,18 +22,13 @@ export const Heading1 = styled.h1`
 export const Heading2 = styled.h3`
   ${heading};
   font-weight: ${theme.fontWeights.bold};
-  font-size: ${theme.fontSizes[4]};
+  font-size: ${theme.fontSizes[3]};
   letter-spacing: -0.6px;
   margin-bottom: ${theme.space[2]};
   margin-top: ${theme.space[5]}
 `
 
 
-export const Heading3 = styled.h5`
-  ${heading};
-  font-weight: 400;
-  font-size: ${theme.fontSizes[2]};
-`
 
 
 
@@ -47,7 +42,7 @@ export const Heading3 = styled.h5`
     transition: opacity 0.3s;
     margin-bottom: 0px;
     a {
-      color: ${theme.colors["text-link"].light};
+      color: ${theme.colors.concrete};
       background: -webkit-linear-gradient(left, ${theme.colors["text-tertiary"].light} 0%, ${theme.colors["text-secondary"].light} 100% );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
