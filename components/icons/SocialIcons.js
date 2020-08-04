@@ -4,7 +4,7 @@ function Dribbble(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
+      width="16"
       height="24"
       fill="none"
       viewBox="0 0 24 24"
@@ -22,7 +22,7 @@ function Behance(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
+      width="16"
       height="24"
       fill="none"
       viewBox="0 0 24 24"
@@ -40,7 +40,7 @@ function Twitter(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
+      width="16"
       height="24"
       fill="none"
       viewBox="0 0 24 24"
@@ -65,7 +65,7 @@ function Substack(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
+      width="16"
       height="24"
       fill="none"
       viewBox="0 0 24 24"

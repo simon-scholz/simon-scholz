@@ -43,11 +43,11 @@ export const Heading2 = styled.h3`
     margin-bottom: 0px;
     a {
       color: ${theme.colors.concrete};
-      background: -webkit-linear-gradient(left, ${theme.colors["text-tertiary"].light} 0%, ${theme.colors["text-secondary"].light} 100% );
+      background: ${theme.colors.concrete};
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 400;
       word-break: break-word;
       hyphens: auto;
     }
@@ -56,6 +56,10 @@ export const Heading2 = styled.h3`
       background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    i {
+      color: ${theme.colors.smokeDark};
+      font-size: ${theme.fontSizes[0]};
     }
     code {
       font-size: ${theme.fontSizes[0]};
@@ -151,6 +155,13 @@ const dash = keyframes`
   }
 `
 
+const dashReverse = keyframes`
+  to {
+    stroke-dashoffset: -12;
+  }
+`
+
+
 // captures the interaction on <Larr /> and <Rarr /> components
 const arrows = css`
   &:hover {
@@ -171,13 +182,13 @@ const arrows = css`
     .animated-arrow {
       .arrow-tip {
         transform: translateX(0px);
+        fill: ${theme.colors.blue60};
         transition: transform 100ms cubic-bezier(0.165, 0.84, 0.44, 1);
       }
       .arrow-base {
-        /* stroke-opacity: 1;
-        transition: stroke-opacity ${theme.animations.default}; */
         stroke-dasharray: 12;
         stroke-dashoffset: -12;
+        stroke: ${theme.colors.blue60};
         animation: ${dash} 100ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       }
     }
@@ -205,10 +216,13 @@ const a = css`
   :hover {
     cursor: pointer;
     text-decoration: none;
+    color: ${theme.colors.blue60};
   }
 `
 
-export const A = styled.a`
+export const A = styled.a.attrs({
+  className: "a"
+})`
   ${a};
   `
 
@@ -273,22 +287,22 @@ export function Arrow() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="12"
-      height="12"
+      width="10"
+      height="10"
       fill="none"
       viewBox="0 0 12 12"
     >
       <path
         className="arrow-tip"
         fill="#000"
-        d="M6.469 1.414a.75.75 0 10-.938 1.172l.938-1.172zM11 6l.469.586a.75.75 0 000-1.172L11 6zM5.531 9.414a.75.75 0 00.938 1.172L5.53 9.414zm0-6.828l5 4 .938-1.172-5-4-.938 1.172zm5 2.828l-5 4 .938 1.172 5-4-.938-1.172z"
+        d="M6.625 1.22a1 1 0 00-1.25 1.56l1.25-1.56zM11 6l.625.78a1 1 0 000-1.56L11 6zM5.375 9.22a1 1 0 001.25 1.56l-1.25-1.56zm0-6.44l5 4 1.25-1.56-5-4-1.25 1.56zm5 2.44l-5 4 1.25 1.56 5-4-1.25-1.56z"
       ></path>
       <path
         className="arrow-base"
         stroke="#000"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeOpacity="0"
         d="M11 6H1"
       ></path>
@@ -307,6 +321,7 @@ const animatedArrow = css`
     stroke-dasharray: 12;
     stroke-dashoffset: -12;
     transform: translateX(-1px);
+    animation: ${dashReverse} 200ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   .arrow-tip {
     fill: ${theme.colors.blue50};

@@ -1,5 +1,5 @@
 import styled, { css, withTheme } from "styled-components";
-import { Dribbble, Behance, Twitter, Substack } from "../components/SocialIcons";
+import { Dribbble, Behance, Twitter, Substack } from "../components/icons/SocialIcons";
 import theme from '../styles/theme'
 
 const clickable = css`
@@ -27,7 +27,7 @@ const Outer = styled.div`
 `
 
 const Container = styled.div`
-  padding: 0.8rem;
+  padding: 0.6rem;
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
@@ -41,7 +41,7 @@ function Footer() {
   return(
       <Outer>
         <Container>
-          <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank"><Dribbble className="icon" /></ClickableIcon>
+          <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank"><Dribbble className="icon"/></ClickableIcon>
           <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank"><Behance className="icon" /></ClickableIcon>
           <ClickableIcon href="https://twitter.com/scholzsimon1" target="_blank"><Twitter className="icon" /></ClickableIcon>
           <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank"><Substack className="icon" /></ClickableIcon>

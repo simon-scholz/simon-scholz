@@ -34,6 +34,49 @@ const ButtonContent = styled.div`
   display: block;
 `
 
+export const InlineButton = styled.button`
+  border-style: hidden;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: ${theme.fontSizes[1]};
+  font-weight: ${theme.fontWeights.body};
+  line-height: ${theme.lineHeights.bodyLong};
+  letter-spacing: -0.1px;
+  color: ${theme.colors.grey};
+  transition: opacity 0.3s;
+  margin-bottom: 0px;
+  color: ${theme.colors.concrete};
+  background: ${theme.colors.concrete};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  font-weight: 400;
+  word-break: break-word;
+  hyphens: auto;
+  &:hover {
+    text-decoration: none;
+    background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+`
+
+export const IconButton = styled.button.attrs({
+  className: "button-icon-only"
+})`
+  cursor: pointer;
+  background: transparent;
+  border-style: hidden;
+  color: ${theme.colors.concrete};
+  padding: 8px;
+  border-radius: 4px;
+  &:hover {
+    color: ${theme.colors.black};
+    background: ${theme.colors.snowDark};
+  }
+`
 
 
 export const Button = styled.button`
