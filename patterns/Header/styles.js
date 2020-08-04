@@ -95,6 +95,7 @@ export const MobileMainItems = styled.div`
 
 export const MobileContainer = styled.div`
   padding: 8px;
+  padding-left: 0px;
   display: flex;
   flex-direction: row;
   align-items: center;

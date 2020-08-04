@@ -19,7 +19,9 @@ export const Heading1 = styled.h1`
   }
 `
 
-export const Heading2 = styled.h3`
+export const Heading2 = styled.h3.attrs({
+  className: "H2"
+})`
   ${heading};
   font-weight: ${theme.fontWeights.bold};
   font-size: ${theme.fontSizes[3]};
@@ -33,7 +35,9 @@ export const Heading2 = styled.h3`
 
 
 
-  export const P = styled.p`
+  export const P = styled.p.attrs({
+    className: "P"
+  })`
     font-size: ${theme.fontSizes[1]};
     font-weight: ${theme.fontWeights.body};
     line-height: ${theme.lineHeights.bodyLong};

@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import { Heading1, Heading2, P, A, Rarr, Arrow} from '../components/Typography'
 import { Button, Flip } from '../components/Actions'
 import Spacer from "../components/Utils"
+import Card, { CardContent, CardImage } from "../patterns/Card";
+
 
 const Main = styled.main`
   padding: 1rem;
@@ -34,11 +36,16 @@ export default function Home() {
       <Spacer large/>
 
       <Heading2>Case studies</Heading2>
-      <P style={{marginTop: 0}}>
-        I've previously co-founded CDF Technologies, where I led the design and creative direction of multiple B2B FinTech products
-        and design systems. Currently I'm working as Head of Design for a soon to be announced FinTech (WealthTech) startup.
-        I'm based in Munich. Please do say hello - I look forward to hearing about your project.
-      </P>
+      <P>These are some of my previous projects.</P>
+      <Spacer small/>
+      <Link href="/work"><A>View more of my work<Rarr/></A></Link>
+      <Card>
+        <CardImage src="/static/simon-laptop.jpg" />
+        <CardContent>
+          <Heading2>Pitchtable</Heading2>
+          <P>Neumorphic User Interface Design</P>
+        </CardContent>
+      </Card>
       <Spacer large />
       <Heading2>Bits and pieces</Heading2>
       <P style={{marginTop: 0}}>

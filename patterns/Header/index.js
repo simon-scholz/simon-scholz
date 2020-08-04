@@ -12,7 +12,7 @@ import Close from '../../components/icons/Close';
 const MENU_ITEMS = [
   {label: "Home", path: "/"},
   {label: "About", path: "/about"},
-  {label: "Case Studies", path: "/case-studies"},
+  {label: "Work", path: "/work"},
 ]
 
 export default function Header() {
@@ -29,9 +29,9 @@ export default function Header() {
     activeRoute = 'About'
     activePath = '/about'
   }
-  if (router.pathname.startsWith('/case-studies')) {
-    activeRoute = 'Case Studies'
-    activePath = '/case-studies'
+  if (router.pathname.startsWith('/work')) {
+    activeRoute = 'Work'
+    activePath = '/work'
   }
 
   useEffect(() => {
