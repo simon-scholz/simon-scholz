@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Head from 'next/head'
 import styled from 'styled-components'
-import { CSSTransition } from "react-transition-group";
 
-import { Heading1, Heading2, P, A, Rarr, TurnRight} from '../components/Typography'
+import { Heading1, Heading2, P, A, Rarr, Arrow} from '../components/Typography'
 import { Button, Flip } from '../components/Actions'
 import Spacer from "../components/Utils"
 
@@ -15,7 +14,6 @@ const Main = styled.main`
 `
 
 export default function Home() {
-  const [showMore, setShowMore] = useState(true);
 
   return (
     <div>
@@ -30,25 +28,9 @@ export default function Home() {
           Right now I'm building a design system and various web application interfaces at a soon to be announced FinTech startup.
           I'm based in Munich.
         </P>
-        <CSSTransition in={showMore} timeout={100} classNames="show-more" unmountOnExit appear >
-        {() =>
-          <P style={{marginTop: 0}}>
-            I am ambitious about creating simple, impactful and delighting user experiences.
-            I've previously co-founded CDF Technologies, where I led the design and creative direction of multiple B2B FinTech products
-            and design systems.
-            Please do say hello - I look forward to hearing about your project.
-            {/*If I'm not in front of my computer, I'm probably gone <a href="https://www.strava.com/athletes/1280244" target="_blank">riding.</a>*/}
-          </P>
-        }
-        </CSSTransition>
+
       <Spacer small/>
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-      <Button onClick={() => setShowMore(!showMore)}>Show {showMore ? "less" : "more"}<Flip open={showMore}/></Button>
-      </div>
-      {/*<div style={{display: "flex", flexDirection: "column", alignItems: "flex-start"}}>
-      <A>Show more<Rarr/></A>
-      <A>Next page<TurnRight/></A>
-      </div>*/}
+      <A>More about me<Rarr/></A>
       <Spacer large />
       <Heading2>Case studies</Heading2>
       <P style={{marginTop: 0}}>

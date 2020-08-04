@@ -144,6 +144,13 @@ const turn = css`
   }
 `
 
+
+const dash = keyframes`
+  to {
+    stroke-dashoffset: 0;
+  }
+`
+
 // captures the interaction on <Larr /> and <Rarr /> components
 const arrows = css`
   &:hover {
@@ -160,6 +167,19 @@ const arrows = css`
       /* animation: ${blink} 1.4s infinite;
       animation-fill-mode: both;
       animation-delay: .4s; */
+    }
+    .animated-arrow {
+      .arrow-tip {
+        transform: translateX(0px);
+        transition: transform 100ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      .arrow-base {
+        /* stroke-opacity: 1;
+        transition: stroke-opacity ${theme.animations.default}; */
+        stroke-dasharray: 12;
+        stroke-dashoffset: -12;
+        animation: ${dash} 100ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
     }
     .left-arrow {
       opacity: 1;
@@ -226,13 +246,6 @@ const RarrChild = styled.span.attrs({
 })`
 `
 
-export const Rarr = styled.span.attrs({
-  children: <RarrChild/>,
-  className: 'right-arrow',
-})`
-  ${baseArrowStyles};
-`
-
 
 export const Larr = styled.span.attrs({
   children: '‹',
@@ -254,3 +267,57 @@ export function TurnRight() {
     <Turn><RarrChild/><RarrChild/><RarrChild/></Turn>
   )
 }
+
+
+export function Arrow() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      fill="none"
+      viewBox="0 0 12 12"
+    >
+      <path
+        className="arrow-tip"
+        fill="#000"
+        d="M6.469 1.414a.75.75 0 10-.938 1.172l.938-1.172zM11 6l.469.586a.75.75 0 000-1.172L11 6zM5.531 9.414a.75.75 0 00.938 1.172L5.53 9.414zm0-6.828l5 4 .938-1.172-5-4-.938 1.172zm5 2.828l-5 4 .938 1.172 5-4-.938-1.172z"
+      ></path>
+      <path
+        className="arrow-base"
+        stroke="#000"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+        strokeOpacity="0"
+        d="M11 6H1"
+      ></path>
+    </svg>
+  );
+}
+
+
+const animatedArrow = css`
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  .arrow-base {
+    stroke: ${theme.colors.blue50};
+    stroke-opacity: 1;
+    stroke-dasharray: 12;
+    stroke-dashoffset: -12;
+    transform: translateX(-1px);
+  }
+  .arrow-tip {
+    fill: ${theme.colors.blue50};
+    transform: translateX(-4px);
+    transition: transform ${theme.animations.default} ;
+  }
+`
+
+export const Rarr = styled.span.attrs({
+  children: <Arrow />,
+  className: 'animated-arrow',
+})`
+  ${animatedArrow};
+`

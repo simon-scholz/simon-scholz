@@ -60,7 +60,6 @@ const Content = styled.div`
 `
 
 
-
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
