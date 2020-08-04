@@ -216,7 +216,6 @@ const baseArrowStyles = css`
   padding-left: 0.4rem;
   font-size: ${theme.fontSizes[2]};
   transition: transform 300ms ease-in-out;
-
 `
 
 

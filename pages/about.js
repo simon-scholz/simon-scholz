@@ -19,7 +19,7 @@ const ImageContainer = styled.div`
 `
 
 const POSITIONS = [
-  {position: "absolute", top: 0, left: 0, zIndex: 0},
+  {position: "absolute", top: 0, left: 0, zIndex: 0, borderRadius: 8},
   {position: "absolute", top: 180, left: 300, zIndex: 1},
   {position: "absolute", top: 40, left: 380, zIndex: 1, transform: "rotate(15deg)"},
   {position: "absolute", top: 30, left: 480, zIndex: 1, width: 160, lineHeight: "normal", fontWeight: 500},

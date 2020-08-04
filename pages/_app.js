@@ -56,7 +56,7 @@ export function TopMenu() {
 }
 
 const Content = styled.div`
-  margin-top: 40px;
+  margin-top: 120px;
 `
 
 
