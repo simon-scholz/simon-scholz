@@ -42,7 +42,7 @@ function CaseStudyHeader(props) {
       <>
       <HeroImg src={"/static/work"+props.heroImg} />
       <Main>
-      <Overline>Case Study</Overline>
+      <Overline>{props.casestudy ? "Case Study" : "Selected Work"}</Overline>
       <Title>{props.title}</Title>
       <StyledP><b>Name: </b>{props.name}</StyledP>
       {props.role && <StyledP><b>Role: </b>{props.role}</StyledP>}

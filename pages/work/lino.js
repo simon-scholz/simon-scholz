@@ -32,12 +32,13 @@ const VideoContainer = styled.div`
     flex-direction: row;
   }
 `
-const IMAGES = [1, 7]
+
 
 export default function Lino() {
   return (
     <div>
     <CaseStudyHeader
+      casestudy
       title="App and Chatbot for Fitness and Nutrition"
       name="Koch mit Lino"
       role="Indie Maker"

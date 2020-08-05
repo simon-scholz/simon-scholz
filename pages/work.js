@@ -62,7 +62,7 @@ export default function Work() {
         path="/work/lino"
       />
       <CaseStudyCard
-        title="Branding (various)"
+        title="Logos & Branding"
         date="2019"
         heroImg="/branding/hero.png"
         path="/work/branding"

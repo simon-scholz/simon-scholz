@@ -23,6 +23,7 @@ export default function Pitchtable() {
   return (
     <div>
     <CaseStudyHeader
+      casestudy
       title="Landing Page, API Dashboard and Billing Console"
       name="Pitchtable"
       role="Design and development lead"

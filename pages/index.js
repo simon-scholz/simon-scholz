@@ -26,7 +26,7 @@ export default function Home() {
         <Heading2>Hey, I'm Simon</Heading2>
         <P>
           I'm a designer who codes.
-          I design, build and ship digital products.
+          I design, build, and ship digital products.
           Right now I'm building a design system and various web application interfaces at a soon to be announced FinTech startup.
           I'm based in Munich.
         </P>
@@ -53,7 +53,7 @@ export default function Home() {
         path="/work/cdf"
       />
       <Spacer large />
-      
+
     </Main>
     </div>
   )

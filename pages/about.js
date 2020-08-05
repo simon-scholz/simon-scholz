@@ -115,7 +115,7 @@ export default function About() {
       and design systems. Apart from the <a href="https://www.cdf.one/" target="_blank">CDF One</a> app I designed and implemented <a href="https://pitchtable.io" target="_blank">pitchtable.io</a>.
       </P>
       <P>
-      Before CDF I was a automotive engineer, specializing in thermal and mechanical load collective simulation of powertrain components by day.
+      Before CDF I worked as an automotive engineer, specializing in thermal and mechanical load collective simulation of powertrain components by day.
       By night I started my first foray into the startup ecosystem by designing and developing a fitness & food app and chatbot.
       </P>
       <P>

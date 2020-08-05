@@ -37,6 +37,7 @@ export default function Cdf() {
   return (
     <div>
     <CaseStudyHeader
+      casestudy
       title="Development of a startup relationship management software"
       name="CDF One"
       role="Co-Founder & CTO"
@@ -96,6 +97,8 @@ export default function Cdf() {
     <ReactPlayer
       url="https://vimeo.com/354163673"
       playing={true}
+      width="100%"
+      height="100%"
     />
     </VideoContainer>
 
@@ -114,6 +117,8 @@ export default function Cdf() {
     <ReactPlayer
       url="https://vimeo.com/444840225"
       playing={true}
+      width="100%"
+      height="100%"
     />
     </VideoContainer>
 
