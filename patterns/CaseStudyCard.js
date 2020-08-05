@@ -33,7 +33,7 @@ function CaseStudyCard(props) {
           <CardImage src={"/static/work"+props.heroImg} />
           <CardContent>
             <Title>{props.title}</Title>
-            <StyledP><b>Role: </b>{props.role}</StyledP>
+            {props.role && <StyledP><b>Role: </b>{props.role}</StyledP>}
             <StyledP><b>Date: </b>{props.date}</StyledP>
           </CardContent>
         </Card>

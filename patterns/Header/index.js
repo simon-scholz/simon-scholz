@@ -29,7 +29,7 @@ const MENU_ITEMS = [
 export default function Header() {
   const router = useRouter()
   const [mobileExpanded, setMobileExpanded] = useState(false);
-  const [contactPopout, setContactPopout] = useState(true);
+  const [contactPopout, setContactPopout] = useState(false);
 
   let activePath = ''
   let activeRoute = ''

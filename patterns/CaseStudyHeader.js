@@ -45,7 +45,7 @@ function CaseStudyHeader(props) {
       <Overline>Case Study</Overline>
       <Title>{props.title}</Title>
       <StyledP><b>Name: </b>{props.name}</StyledP>
-      <StyledP><b>Role: </b>{props.role}</StyledP>
+      {props.role && <StyledP><b>Role: </b>{props.role}</StyledP>}
       <StyledP><b>Date: </b>{props.date}</StyledP>
       {props.behanceLink &&
         <>

@@ -94,7 +94,7 @@ export default function About() {
     <Main>
     <ImageContainer>
       <Img1
-        src="/static/simon-laptop.jpg"
+        src="/static/simon-laptop-1.png"
         aria-label="photo showing simon behind laptop"
       />
       <Img2

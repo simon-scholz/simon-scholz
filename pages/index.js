@@ -53,12 +53,7 @@ export default function Home() {
         path="/work/cdf"
       />
       <Spacer large />
-      <Heading2>Bits and pieces</Heading2>
-      <P style={{marginTop: 0}}>
-        I've previously co-founded CDF Technologies, where I led the design and creative direction of multiple B2B FinTech products
-        and design systems. Currently I'm working as Head of Design for a soon to be announced FinTech (WealthTech) startup.
-        I'm based in Munich. Please do say hello - I look forward to hearing about your project.
-      </P>
+      
     </Main>
     </div>
   )
