@@ -21,7 +21,8 @@ const Img = styled.img`
 
 const InlineImg = styled.img`
   width: 85%;
-  padding: 24px;
+  height: 85%;
+  margin: 16px;
   @media only screen and (min-width: ${theme.breakpoints[4]}) {
     width: calc(85% / ${props =>
       props.numberImages && props.numberImages

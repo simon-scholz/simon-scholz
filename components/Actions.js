@@ -8,7 +8,7 @@ const px = (v) => {
 
 const buttonBase = css`
   position: relative;
-  padding: 6px 16px;
+  padding: 12px 16px;
   font-size: 14px;
   line-height: normal;
   font-weight: ${theme.fontWeights.body};
@@ -19,8 +19,13 @@ const buttonBase = css`
   border-radius: 4px;
   font-family: ${theme.fonts.body};
   cursor: pointer;
+  margin: 8px 0px;
   &:disabled {
     cursor: not-allowed;
+  }
+  @media only screen and (min-width: ${theme.breakpoints[4]}) {
+    padding: 8px 16px;
+    margin: 0px 0px;
   }
 `
 

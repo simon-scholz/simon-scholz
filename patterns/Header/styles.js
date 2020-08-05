@@ -80,12 +80,13 @@ const ContactPopoutBase = styled(Card)`
   right: 12px;
   top: 34px;
   width: 240px;
-  height: 188px;
+  height: 204px;
   border: 1px solid ${theme.colors.blue50};
   padding: 16px;
   @media only screen and (min-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+    height: 188px;
   }
 `
 

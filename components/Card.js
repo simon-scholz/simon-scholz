@@ -6,7 +6,7 @@ const px = (v) => {
 }
 
 const Card = styled.div`
-  margin: 24px 0px;
+  margin: 32px 0px;
   background: ${theme.colors.white};
   box-shadow: ${theme.shadows.list};
   -webkit-box-shadow: ${theme.shadows.default};
@@ -20,7 +20,6 @@ const Card = styled.div`
   width: 100%;
   height: auto;
   border-radius: 0px;
-  margin-bottom: 1px;
   border: 1px solid ${theme.colors.snowDark};
   border-radius: 8px;
   cursor: pointer;

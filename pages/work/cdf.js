@@ -107,7 +107,7 @@ export default function Cdf() {
     <Overline>#4</Overline>
     <Heading2>Final Product</Heading2>
     <P>
-    The Product is live and used by multiple large B2B customers.
+    The Product is live and is being used by multiple large B2B customers.
     </P>
     </Main>
     <Img src={"/static/work/cdf/8.png"} />

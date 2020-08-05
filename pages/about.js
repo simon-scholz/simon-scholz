@@ -109,7 +109,7 @@ export default function About() {
 
       </ImageContainer>
       <P>
-      👋 I'm a designer who codes. I design, build and ship digital products. Right now I'm building a design system and various web application interfaces at a soon to be announced FinTech startup.
+      👋 I'm a designer who codes. I design, build, and ship digital products. Right now I'm building a design system and various web application interfaces at a soon to be announced FinTech startup.
       </P>
       <P>I've previously co-founded <a href="https://www.cdf.one/" target="_blank">CDF Technologies</a>, where I led the design and creative direction of multiple B2B FinTech products
       and design systems. Apart from the <a href="https://www.cdf.one/" target="_blank">CDF One</a> app I designed and implemented <a href="https://pitchtable.io" target="_blank">pitchtable.io</a>.
