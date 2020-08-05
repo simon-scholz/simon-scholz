@@ -6,8 +6,7 @@ import styled from 'styled-components'
 import { Heading1, Heading2, P, A, Rarr, Arrow} from '../components/Typography'
 import { Button, Flip } from '../components/Actions'
 import Spacer from "../components/Utils"
-import Card, { CardContent, CardImage } from "../patterns/Card";
-
+import CaseStudyCard from "../patterns/CaseStudyCard";
 
 const Main = styled.main`
   padding: 1rem;
@@ -39,13 +38,20 @@ export default function Home() {
       <P>These are some of my previous projects.</P>
       <Spacer small/>
       <Link href="/work"><A>View more of my work<Rarr/></A></Link>
-      <Card>
-        <CardImage src="/static/simon-laptop.jpg" />
-        <CardContent>
-          <Heading2>Pitchtable</Heading2>
-          <P>Neumorphic User Interface Design</P>
-        </CardContent>
-      </Card>
+      <CaseStudyCard
+        title="Pitchtable"
+        role="Design and development lead"
+        date="2020"
+        heroImg="/p/hero.png"
+        path="/work/pitchtable"
+      />
+      <CaseStudyCard
+        title="CDF One"
+        role="Co-Founder & CTO"
+        date="2018 - 2020"
+        heroImg="/cdf/hero.png"
+        path="/work/cdf"
+      />
       <Spacer large />
       <Heading2>Bits and pieces</Heading2>
       <P style={{marginTop: 0}}>

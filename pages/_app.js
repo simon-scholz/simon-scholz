@@ -9,7 +9,7 @@ import Header from '../patterns/Header';
 
 
 const Content = styled.div`
-  margin-top: 120px;
+  margin-top: 68px;
 `
 
 

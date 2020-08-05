@@ -12,6 +12,7 @@ const Main = styled.main`
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
+  margin-top: 110px;
 `
 
 const ImageContainer = styled.div`

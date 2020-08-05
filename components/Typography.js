@@ -4,11 +4,10 @@ import theme from '../styles/theme'
 
 const heading = css`
   font-weight: ${theme.fontWeights.heading};
-  color: var(--text-primary);
+  color: ${theme.colors.darkGrey};
   line-height: ${theme.lineHeights.heading};
   letter-spacing: -0.4px;
 `
-
 
 
 export const Heading1 = styled.h1`
@@ -31,8 +30,13 @@ export const Heading2 = styled.h3.attrs({
 `
 
 
-
-
+export const Overline = styled.p`
+  text-transform: uppercase;
+  font-size: ${theme.fontSizes[0]};
+  font-weight: ${theme.fontWeights.body};
+  line-height: ${theme.lineHeights.heading};
+  color: ${theme.colors.silver};
+`
 
 
   export const P = styled.p.attrs({
@@ -210,7 +214,7 @@ const a = css`
   font-weight: ${theme.fontWeights.body};
   line-height: ${theme.lineHeights.body};
   letter-spacing: -0.1px;
-  color: ${theme.colors["text-link"].light};
+  color: ${theme.colors.blue50};
   text-decoration: none;
   font-weight: 500;
   word-break: break-word;

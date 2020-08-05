@@ -49,14 +49,14 @@ export const CardContent = styled.div`
 `
 
 export const CardImage = styled.img`
+  object-fit: cover;
   width: 100%;
   max-height: 240px;
-  object-fit: cover;
   border-radius: 8px 8px 0px 0px;
   @media only screen and (min-width: ${theme.breakpoints[4]}) {
-    height: 100%;
     border-radius: 8px 0px 0px 8px;
-    max-width: 240px;
+    max-width: 280px;
+    height: 100%;
   }
 `
 

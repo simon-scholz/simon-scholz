@@ -8,7 +8,8 @@ const px = (v) => {
 
 const buttonBase = css`
   position: relative;
-  font-size: ${theme.fontSizes[0]};
+  padding: 6px 16px;
+  font-size: 14px;
   line-height: normal;
   font-weight: ${theme.fontWeights.body};
   display: flex;
@@ -18,7 +19,6 @@ const buttonBase = css`
   border-radius: 4px;
   font-family: ${theme.fonts.body};
   cursor: pointer;
-  padding: ${theme.space[1]} ${theme.space[2]};
   &:disabled {
     cursor: not-allowed;
   }

@@ -3,7 +3,18 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import { IconButton } from "../../components/Actions";
-import { Container, Grid, MainItems, MobileMainItems, MobileContainer, MenuLink, ContactButton, HeaderBackground, LabelMobile } from "./styles";
+import {
+  Container,
+  Grid,
+  MainItems,
+  MobileMainItems,
+  MobileContainer,
+  MenuLink,
+  ContactButton,
+  ContactPopout,
+  HeaderBackground,
+  LabelMobile
+} from "./styles";
 import Send from '../../components/icons/Send';
 import Menu from '../../components/icons/Menu';
 import Close from '../../components/icons/Close';
@@ -18,6 +29,7 @@ const MENU_ITEMS = [
 export default function Header() {
   const router = useRouter()
   const [mobileExpanded, setMobileExpanded] = useState(false);
+  const [contactPopout, setContactPopout] = useState(true);
 
   let activePath = ''
   let activeRoute = ''
@@ -63,7 +75,10 @@ export default function Header() {
             </>
           }
         </MobileContainer>
-      <ContactButton variant="cta" hide={mobileExpanded}><Send /><p>Contact</p></ContactButton>
+      <ContactButton variant="cta" hide={mobileExpanded} onClick={() => setContactPopout(!contactPopout)}><Send /><p>Contact</p></ContactButton>
+      {contactPopout &&
+        <ContactPopout close={() => setContactPopout(false)}/>
+      }
       </Grid>
       <HeaderBackground />
     </Container>

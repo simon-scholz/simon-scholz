@@ -1,8 +1,11 @@
+import { useState } from "react";
 import styled from "styled-components";
 import theme from '../../styles/theme';
 
 import { Button } from '../../components/Actions'
 import { P, A } from '../../components/Typography'
+import Card from '../../components/Card'
+import Spacer, { OutsideClickDetector } from '../../components/Utils'
 
 export const Container = styled.header`
   position: fixed;
@@ -69,6 +72,69 @@ export const ContactButton = styled(Button)`
   }
 `
 
+const ContactPopoutBase = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  right: 12px;
+  top: 34px;
+  width: 240px;
+  height: 188px;
+  border: 1px solid ${theme.colors.blue50};
+  padding: 16px;
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`
+
+const ConctactPopperP = styled(P)`
+  font-size: ${theme.fontSizes[0]};
+  line-height: ${theme.lineHeights.code};
+  color: ${theme.colors.grey};
+  margin-top: 0px;
+`
+
+export function ContactPopout(props) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = (text) => {
+      var dummy = document.createElement("input");
+      document.body.appendChild(dummy);
+      dummy.setAttribute('value', text);
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+      setCopied(true)
+    };
+
+  const sendEmail = () => {
+    var link = "mailto:simonscholz@outlook.com";
+    window.location.href = link;
+  }
+
+  return(
+    <OutsideClickDetector onOutsideClick={() => props.close()}>
+      <ContactPopoutBase>
+        <ConctactPopperP>Huh? A popup? Well, I'm not a huge fan of mailto-links myself, so I figured I'd let you choose...</ConctactPopperP>
+        <Spacer />
+        <Button
+          onClick={sendEmail}
+          style={{width: "100%"}}>
+          Send email now
+        </Button>
+        <Spacer />
+        <Button
+          onClick={() => copyToClipboard("simonscholz@outlook.com")}
+          variant="cta"
+          style={{width: "100%"}}>
+          {copied ? "Copied!" : "Copy email address"}
+        </Button>
+      </ContactPopoutBase>
+    </OutsideClickDetector>
+  )
+}
 
 export const MainItems = styled.div`
   width: 100%;
