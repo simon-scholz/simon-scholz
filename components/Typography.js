@@ -53,7 +53,9 @@ export const Overline = styled.p`
       color: ${theme.colors.concrete};
       background: ${theme.colors.concrete};
       -webkit-background-clip: text;
+      -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
       text-decoration: none;
       font-weight: 400;
       word-break: break-word;
@@ -63,7 +65,9 @@ export const Overline = styled.p`
       text-decoration: none;
       background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
       -webkit-background-clip: text;
+      -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
     }
     i {
       color: ${theme.colors.smokeDark};

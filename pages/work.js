@@ -39,7 +39,7 @@ export default function Work() {
       For current work in progress bits and pieces have a look
       at my <a href="https://dribbble.com/simonscholz" target="_blank">Dribbble profile</a> or find me on <a href="https://twitter.com/scholzsimon1" target="_blank">Twitter</a>.
       </P>
-      <P>Curious to learn more? Contact me via <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}>simonscholz@outlook.com</InlineButton>{copied && <i> (Copied!)</i>}.</P>
+      <P>Curious to learn more? Contact me via <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}><p>simonscholz@outlook.com</p></InlineButton>{copied && <i> (Copied!)</i>}.</P>
       <CaseStudyCard
         title="Pitchtable"
         role="Design and development lead"

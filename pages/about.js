@@ -119,7 +119,7 @@ export default function About() {
       By night I started my first foray into the startup ecosystem by designing and developing a fitness & food app and chatbot.
       </P>
       <P>
-      I've recently started using Twitter more often. So find me <a href="https://twitter.com/scholzsimon1" target="_blank">there</a> or just shoot me an email at <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}>simonscholz@outlook.com</InlineButton>{copied && <i> (Copied!)</i>}.
+      I've recently started using Twitter more often. So find me <a href="https://twitter.com/scholzsimon1" target="_blank">there</a> or just shoot me an email at <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}><p>simonscholz@outlook.com</p></InlineButton>{copied && <i> (Copied!)</i>}.
       </P>
       <P>
       I'm excited to hear about your project! When I'm not answering immediately, I'm probably gone <a href="https://www.strava.com/athletes/1280244" target="_blank">riding</a>.

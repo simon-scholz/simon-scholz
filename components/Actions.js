@@ -10,12 +10,12 @@ const buttonBase = css`
   position: relative;
   padding: 12px 16px;
   font-size: 14px;
-  line-height: normal;
+  line-height: 1;
   font-weight: ${theme.fontWeights.body};
   display: flex;
   flex-direction: row;
   justify-content: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   border-radius: 4px;
   font-family: ${theme.fonts.body};
   cursor: pointer;
@@ -41,7 +41,7 @@ const ButtonContent = styled.div`
 
 export const InlineButton = styled.button`
   border-style: hidden;
-  display: inline-flex;
+  display: inline;
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -49,22 +49,35 @@ export const InlineButton = styled.button`
   font-weight: ${theme.fontWeights.body};
   line-height: ${theme.lineHeights.bodyLong};
   letter-spacing: -0.1px;
-  color: ${theme.colors.grey};
   transition: opacity 0.3s;
   margin-bottom: 0px;
-  color: ${theme.colors.concrete};
   background: ${theme.colors.concrete};
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  color: ${theme.colors.concrete};
   text-decoration: none;
   font-weight: 400;
   word-break: break-word;
   hyphens: auto;
+  p {
+    margin: 0px;
+  }
   &:hover {
+    p {
+      margin: 0px;
+      text-decoration: none;
+      background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+    }
     text-decoration: none;
     background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
     -webkit-background-clip: text;
+    -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
   }
 `
 
