@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import { useState } from "react";
 import styled from 'styled-components'
 import theme from '../../styles/theme';
 
-import { Heading1, Heading2, P, A } from '../../components/Typography'
+import { Heading1, Heading2, P, A, Rarr } from '../../components/Typography'
 import Spacer from "../../components/Utils"
 import CaseStudyHeader from "../../patterns/CaseStudyHeader";
 
@@ -34,6 +35,11 @@ export default function Pitchtable() {
       {Array.apply(null, { length: IMAGES[1]-IMAGES[0]+1 }).map((_, idx) => (
         <Img key={"img_"+idx} src={"/static/work/p/"+(idx+IMAGES[0]).toString()+".png"} />
       ))}
+
+    <Main>
+    <Spacer large />
+    <Link href="/work"><A>View more of my work<Rarr/></A></Link>
+    </Main>
     </div>
   )
 }

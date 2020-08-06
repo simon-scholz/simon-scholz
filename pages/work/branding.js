@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import { useState } from "react";
 import styled from 'styled-components'
 import theme from '../../styles/theme';
 
-import { Heading1, Heading2, P, A, Overline } from '../../components/Typography'
+import { Heading1, Heading2, P, A, Overline, Rarr } from '../../components/Typography'
 import Spacer from "../../components/Utils"
 import CaseStudyHeader from "../../patterns/CaseStudyHeader";
 
@@ -92,6 +93,10 @@ export default function Branding() {
     <InlineImg src={"/static/work/branding/3_1.png"} numberImages={1} />
     </ImageContainer>
 
+    <Main>
+    <Spacer large />
+    <Link href="/work"><A>View more of my work<Rarr/></A></Link>
+    </Main>
     </div>
   )
 }
