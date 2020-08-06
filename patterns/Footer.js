@@ -58,10 +58,10 @@ function Footer() {
   return(
       <Outer>
         <Container>
-          <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank"><Dribbble className="icon"/></ClickableIcon>
-          <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank"><Behance className="icon" /></ClickableIcon>
-          <ClickableIcon href="https://twitter.com/scholzsimon1" target="_blank"><Twitter className="icon" /></ClickableIcon>
-          <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank"><Substack className="icon" /></ClickableIcon>
+          <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank" rel="noopener"><Dribbble className="icon"/></ClickableIcon>
+          <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank" rel="noopener"><Behance className="icon" /></ClickableIcon>
+          <ClickableIcon href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener"><Twitter className="icon" /></ClickableIcon>
+          <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank" rel="noopener"><Substack className="icon" /></ClickableIcon>
           <Link href="/impressum"><FooterLink href="/impressum">Impressum – Legal Notice</FooterLink></Link>
         </Container>
       </Outer>

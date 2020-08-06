@@ -57,7 +57,7 @@ export default function Cdf() {
     </P>
     <Spacer large/>
     </Main>
-    <Img src={"/static/work/cdf/1.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/1.png"} />
 
     <Main>
     <Overline>#1</Overline>
@@ -73,8 +73,8 @@ export default function Cdf() {
     This method enabled us to receive feedback on the product very early, which resulted in several rounds of concept adaptions
     </P>
     </Main>
-    <Img src={"/static/work/cdf/2.png"} />
-    <Img src={"/static/work/cdf/3.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/2.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/3.png"} />
 
     <Main>
     <Overline>#2</Overline>
@@ -83,8 +83,8 @@ export default function Cdf() {
     The second iteration resulted in more whitespace and a cleaner look. Concept wise the focus got shifted on the startup perspective and the tracking of their KPIs.
     </P>
     </Main>
-    <Img src={"/static/work/cdf/4.png"} />
-    <Img src={"/static/work/cdf/5.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/4.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/5.png"} />
 
 
     <Main>
@@ -94,8 +94,8 @@ export default function Cdf() {
     The last iteration of user feedback led to the development of an investment process management software as MVP. I used Zeplin to hand off my screens from Sketch in order to implement them in a React web app.
     </P>
     </Main>
-    <Img src={"/static/work/cdf/6.png"} />
-    <Img src={"/static/work/cdf/7.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/6.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/7.png"} />
     <VideoContainer>
     <ReactPlayer
       url="https://vimeo.com/354163673"
@@ -113,9 +113,9 @@ export default function Cdf() {
     The Product is live and is being used by multiple large B2B customers.
     </P>
     </Main>
-    <Img src={"/static/work/cdf/8.png"} />
-    <Img src={"/static/work/cdf/9.png"} />
-    <Img src={"/static/work/cdf/10.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/8.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/9.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/10.png"} />
     <VideoContainer>
     <ReactPlayer
       url="https://vimeo.com/444840225"
@@ -129,7 +129,7 @@ export default function Cdf() {
     <Overline>Branding</Overline>
     <Heading2>Landing Pages</Heading2>
     </Main>
-    <Img src={"/static/work/cdf/11.png"} />
+    <Img alt="Portfolio Screenshot - Project CDF" src={"/static/work/cdf/11.png"} />
 
     <Main>
     <Spacer large />

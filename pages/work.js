@@ -37,7 +37,7 @@ export default function Work() {
       <P>
       This page shows some of my previous projects.
       For current work in progress bits and pieces have a look
-      at my <a href="https://dribbble.com/simonscholz" target="_blank">Dribbble profile</a> or find me on <a href="https://twitter.com/scholzsimon1" target="_blank">Twitter</a>.
+      at my <a href="https://dribbble.com/simonscholz" target="_blank" rel="noopener">Dribbble profile</a> or find me on <a href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener">Twitter</a>.
       </P>
       <P>Curious to learn more? Contact me via <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}><p>simonscholz@outlook.com</p></InlineButton>{copied && <i> (Copied!)</i>}.</P>
       <CaseStudyCard

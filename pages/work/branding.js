@@ -64,9 +64,9 @@ export default function Branding() {
     </P>
     </Main>
     <ImageContainer>
-    <InlineImg src={"/static/work/branding/1_1.png"} numberImages={3} />
-    <InlineImg src={"/static/work/branding/1_2.png"} numberImages={3} />
-    <InlineImg src={"/static/work/branding/1_3.png"} numberImages={3} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/1_1.png"} numberImages={3} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/1_2.png"} numberImages={3} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/1_3.png"} numberImages={3} />
     </ImageContainer>
 
 
@@ -77,9 +77,9 @@ export default function Branding() {
     </P>
     </Main>
     <ImageContainer>
-    <InlineImg src={"/static/work/branding/2_1.png"} numberImages={3} />
-    <InlineImg src={"/static/work/branding/2_2.png"} numberImages={3} />
-    <InlineImg src={"/static/work/branding/2_3.png"} numberImages={3} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/2_1.png"} numberImages={3} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/2_2.png"} numberImages={3} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/2_3.png"} numberImages={3} />
     </ImageContainer>
 
 
@@ -90,7 +90,7 @@ export default function Branding() {
     </P>
     </Main>
     <ImageContainer>
-    <InlineImg src={"/static/work/branding/3_1.png"} numberImages={1} />
+    <InlineImg alt="Portfolio Screenshot - Branding and Logos" src={"/static/work/branding/3_1.png"} numberImages={1} />
     </ImageContainer>
 
     <Main>

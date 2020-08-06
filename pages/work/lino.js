@@ -57,16 +57,16 @@ export default function Lino() {
     </P>
     <Spacer large/>
     </Main>
-    <Img src={"/static/work/lino/1.png"} />
+    <Img alt="Portfolio Screenshot - Project Lino" src={"/static/work/lino/1.png"} />
     <VideoContainer>
-    <Img src={"/static/work/lino/2.png"} style={{width: 210}}/>
+    <Img alt="Portfolio Screenshot - Project Lino" src={"/static/work/lino/2.png"} style={{width: 210}}/>
     <ReactPlayer
       url="https://vimeo.com/228954700"
       playing={true}
       width={260}
     />
     </VideoContainer>
-    <Img src={"/static/work/lino/3.png"} />
+    <Img alt="Portfolio Screenshot - Project Lino" src={"/static/work/lino/3.png"} />
 
     <Main>
     <Overline>Branding</Overline>
@@ -78,7 +78,7 @@ export default function Lino() {
     As chatbots were still relatively new we decided to give our chatbot a personality in order to facilitate adoption. This resulted in a re-branding of the product.
     </P>
     </Main>
-    <Img src={"/static/work/lino/4.png"} />
+    <Img alt="Portfolio Screenshot - Project Lino" src={"/static/work/lino/4.png"} />
 
 
     <Main>
@@ -100,7 +100,7 @@ export default function Lino() {
     <Overline>Branding</Overline>
     <Heading2>Landing Page</Heading2>
     </Main>
-    <Img src={"/static/work/lino/5.png"} />
+    <Img alt="Portfolio Screenshot - Project Lino" src={"/static/work/lino/5.png"} />
 
     <Main>
     <Spacer large />

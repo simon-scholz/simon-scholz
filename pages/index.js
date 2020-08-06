@@ -21,6 +21,10 @@ export default function Home() {
     <div>
     <Head>
       <title>Simon Scholz</title>
+      <meta name="description" content="Simon Scholz - Designer, who codes" />
+      <meta name="keywords" content="UX, UI, Product Design, Development" />
+      <meta name="author" content="Simon Scholz" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
     <Main>
         <Heading2>Hey, I'm Simon</Heading2>
