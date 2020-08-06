@@ -50,7 +50,7 @@ function CaseStudyHeader(props) {
       {props.behanceLink &&
         <>
         <Spacer large />
-        <A href={props.behanceLink} target="_blank">View on Behance<Rarr/></A>
+        <A href={props.behanceLink} target="_blank" rel="noopener">View on Behance<Rarr/></A>
         </>
       }
       </Main>
