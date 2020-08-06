@@ -25,7 +25,14 @@ export default function Home() {
       <meta name="keywords" content="UX, UI, Product Design, Development" />
       <meta name="author" content="Simon Scholz" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <script>
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+      </script>
+      <script src="picturefill.js" async></script>
     </Head>
+
     <Main>
         <Heading2>Hey, I'm Simon</Heading2>
         <P>

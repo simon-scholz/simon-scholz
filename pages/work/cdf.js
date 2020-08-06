@@ -4,7 +4,7 @@ import ReactPlayer from "react-player"
 import styled from 'styled-components'
 import theme from '../../styles/theme';
 
-import { Heading1, Heading2, P, A, Overline, Rarr } from '../../components/Typography'
+import { Heading1, Heading2, P, A, Overline, Rarr, TurnRight } from '../../components/Typography'
 import Spacer from "../../components/Utils"
 import CaseStudyHeader from "../../patterns/CaseStudyHeader";
 
@@ -133,7 +133,10 @@ export default function Cdf() {
 
     <Main>
     <Spacer large />
-    <Link href="/work"><A>View more of my work<Rarr/></A></Link>
+    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
+    <Link href="/work"><A secondary>View more of my work<Rarr/></A></Link>
+    <Link href="/work/lino"><A>Go to next project<TurnRight/></A></Link>
+    </div>
     </Main>
     </div>
   )

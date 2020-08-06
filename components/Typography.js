@@ -176,6 +176,16 @@ const dashReverse = keyframes`
 
 // captures the interaction on <Larr /> and <Rarr /> components
 const arrows = css`
+  .animated-arrow {
+    .arrow-tip {
+      fill: ${props =>
+        props.secondary ? theme.colors.concrete : theme.colors.blue50};
+    }
+    .arrow-base {
+      stroke: ${props =>
+        props.secondary ? theme.colors.concrete : theme.colors.blue50};
+    }
+  }
   &:hover {
     .right-arrow-child {
       /* animation: ${blink} 1.4s infinite;
@@ -194,13 +204,15 @@ const arrows = css`
     .animated-arrow {
       .arrow-tip {
         transform: translateX(0px);
-        fill: ${theme.colors.blue60};
+        fill: ${props =>
+          props.secondary ? theme.colors.black : theme.colors.blue60};
         transition: transform 100ms cubic-bezier(0.165, 0.84, 0.44, 1);
       }
       .arrow-base {
         stroke-dasharray: 12;
         stroke-dashoffset: -12;
-        stroke: ${theme.colors.blue60};
+        stroke: ${props =>
+          props.secondary ? theme.colors.black : theme.colors.blue60};
         animation: ${dash} 100ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       }
     }
@@ -218,7 +230,8 @@ const a = css`
   font-weight: ${theme.fontWeights.body};
   line-height: ${theme.lineHeights.body};
   letter-spacing: -0.1px;
-  color: ${theme.colors.blue50};
+  color: ${props =>
+    props.secondary ? theme.colors.concrete : theme.colors.blue50};
   text-decoration: none;
   font-weight: 500;
   word-break: break-word;
@@ -228,7 +241,8 @@ const a = css`
   :hover {
     cursor: pointer;
     text-decoration: none;
-    color: ${theme.colors.blue60};
+    color: ${props =>
+      props.secondary ? theme.colors.black : theme.colors.blue60};
   }
 `
 
