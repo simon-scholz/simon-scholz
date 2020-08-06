@@ -54,8 +54,8 @@ export default function Header() {
     <Container>
       <Grid>
         <MainItems>
-        {MENU_ITEMS.map((item) => (
-          <Link href={item.path}><MenuLink href="#" active={activePath === item.path}>{item.label}</MenuLink></Link>
+        {MENU_ITEMS.map((item, idx) => (
+          <Link key={"linkId_"+idx} href={item.path}><MenuLink href="#" active={activePath === item.path}>{item.label}</MenuLink></Link>
         ))}
         </MainItems>
         <MobileContainer>

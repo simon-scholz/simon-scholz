@@ -26,7 +26,7 @@ export const Heading2 = styled.h3.attrs({
   font-size: ${theme.fontSizes[3]};
   letter-spacing: -0.6px;
   margin-bottom: ${theme.space[2]};
-  margin-top: ${theme.space[5]}
+  margin-top: ${theme.space[5]};
 `
 
 

@@ -32,7 +32,7 @@ export default function Pitchtable() {
       behanceLink="https://www.behance.net/gallery/101714751/Pitchtableio-User-Interface"
     />
       {Array.apply(null, { length: IMAGES[1]-IMAGES[0]+1 }).map((_, idx) => (
-        <Img src={"/static/work/p/"+(idx+IMAGES[0]).toString()+".png"} />
+        <Img key={"img_"+idx} src={"/static/work/p/"+(idx+IMAGES[0]).toString()+".png"} />
       ))}
     </div>
   )

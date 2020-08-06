@@ -26,6 +26,8 @@ const VideoContainer = styled.div`
   align-items: center;
   background: ${theme.colors.snowDark};
   width: 100%;
+  height: 80vh;
+  max-height: 800px;
   justify-content: center;
   padding: 40px 0px;
   @media only screen and (min-width: ${theme.breakpoints[4]}) {

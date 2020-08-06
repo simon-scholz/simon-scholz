@@ -68,6 +68,5 @@ const theme = {
   colors: COLORS
 }
 
-console.log(theme)
 
 export default theme
