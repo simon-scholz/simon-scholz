@@ -55,7 +55,7 @@ export default function Header() {
       <Grid>
         <MainItems>
         {MENU_ITEMS.map((item, idx) => (
-          <Link key={"linkId_"+idx} href={item.path}><MenuLink href="#" active={activePath === item.path}>{item.label}</MenuLink></Link>
+          <Link key={"linkId_"+idx} href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
         ))}
         </MainItems>
         <MobileContainer>
@@ -64,7 +64,7 @@ export default function Header() {
             <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Close /></IconButton>
             <MobileMainItems>
             {MENU_ITEMS.map((item) => (
-              <Link href={item.path}><MenuLink href="#" active={activePath === item.path}>{item.label}</MenuLink></Link>
+              <Link href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
             ))}
             </MobileMainItems>
             </div>
