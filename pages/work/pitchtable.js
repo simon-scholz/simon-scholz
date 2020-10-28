@@ -43,6 +43,8 @@ export default function Pitchtable() {
       behanceLink="https://www.behance.net/gallery/101714751/Pitchtableio-User-Interface"
     />
       {Array.apply(null, { length: IMAGES[1]-IMAGES[0]+1 }).map((_, idx) => (
+        <>
+        {console.log("/static/work/p/"+(idx+IMAGES[0]).toString()+"-xl.png")}
         <Img
           src={"/static/work/p/"+(idx+IMAGES[0]).toString()+"-xl.png"}
           alt="Portfolio Screenshot - Project Pitchtable"
@@ -51,6 +53,7 @@ export default function Pitchtable() {
           key={"img_"+idx}
           quality={100}
         />
+        </>
       ))}
 
     <Main>

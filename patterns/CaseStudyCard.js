@@ -30,7 +30,7 @@ function CaseStudyCard(props) {
     return(
       <Link href={props.path}>
         <Card>
-          <CardImage src={"/static/work"+props.heroImg} unsized/>
+          <CardImage src={"/static/work"+props.heroImg} />
           <CardContent>
             <Title>{props.title}</Title>
             {props.role && <StyledP><b>Role: </b>{props.role}</StyledP>}
