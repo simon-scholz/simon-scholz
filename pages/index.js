@@ -15,6 +15,8 @@ const Main = styled.main`
   margin: 0 auto;
 `
 
+
+
 export default function Home() {
 
   return (
@@ -26,7 +28,7 @@ export default function Home() {
       <meta name="author" content="Simon Scholz" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      
+
     </Head>
 
     <Main>
