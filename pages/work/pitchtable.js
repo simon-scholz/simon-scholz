@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from "react";
 import styled from 'styled-components'
 import theme from '../../styles/theme';
@@ -13,12 +14,21 @@ const Main = styled.main`
   max-width: 700px;
   margin: 0 auto;
 `
-const Img = styled.img`
+const Img = styled(Image)`
   width: 100%;
   padding: 8px;
 `
 
 const IMAGES = [1, 7]
+const IMAGE_SIZES = [
+  {w: 2880, h: 2668},  //1
+  {w: 2880, h: 2100},  //2
+  {w: 2880, h: 2048},  //3
+  {w: 2880, h: 2142},  //4
+  {w: 2880, h: 2142},  //5
+  {w: 2880, h: 1700},  //6
+  {w: 2880, h: 1700}   //7
+]
 
 export default function Pitchtable() {
   return (
@@ -33,11 +43,17 @@ export default function Pitchtable() {
       behanceLink="https://www.behance.net/gallery/101714751/Pitchtableio-User-Interface"
     />
       {Array.apply(null, { length: IMAGES[1]-IMAGES[0]+1 }).map((_, idx) => (
-        <picture alt="Portfolio Screenshot - Project Pitchtable" key={"img_"+idx}>
-          <source srcset={"/static/work/p/"+(idx+IMAGES[0]).toString()+"-xl.png"} media="(min-width: 1450px)" />
-          <source srcset={"/static/work/p/"+(idx+IMAGES[0]).toString()+"-l.png"} media="(min-width: 1080px)" />
-          <Img src={"/static/work/p/"+(idx+IMAGES[0]).toString()+"-m.png"} />
-        </picture>
+        <>
+        {console.log("/static/work/p/"+(idx+IMAGES[0]).toString()+"-xl.png")}
+        <Img
+          src={"/static/work/p/"+(idx+IMAGES[0]).toString()+"-xl.png"}
+          alt="Portfolio Screenshot - Project Pitchtable"
+          width={IMAGE_SIZES[idx].w}
+          height={IMAGE_SIZES[idx].h}
+          key={"img_"+idx}
+          quality={100}
+        />
+        </>
       ))}
 
     <Main>
