@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import theme from '../styles/theme';
+import Image from 'next/image'
 
 const px = (v) => {
   return(v+"px")
@@ -47,7 +48,7 @@ export const CardContent = styled.div`
   }
 `
 
-export const CardImage = styled.img`
+export const CardImage = styled(Image)`
   object-fit: cover;
   width: 100%;
   max-height: 240px;
