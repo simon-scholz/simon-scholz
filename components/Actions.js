@@ -179,3 +179,53 @@ export const Flip = styled.span.attrs({
     || "rotate(90deg)"};
   transition: transform 300ms ease-in-out;
 `
+
+
+
+export const Label = styled.label`
+  font-size: 0.6rem;
+  line-height: ${theme.lineHeights.body};
+  color: ${theme.colors.grey};
+  padding: 4px 0px;
+`
+
+export const FormField = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+
+export const TextField = styled.input`
+  width: 100%;
+  border: none;
+  background: ${theme.colors.snowDark};
+  padding: 12px ${theme.space[3]};
+  border-radius: ${theme.space[2]};
+  font-size: ${theme.fontSizes[0]};
+  &:hover {
+    background: ${theme.colors.snowDarker};
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.8);
+  }
+`
+
+export const TextArea = styled.textarea`
+  width: 100%;
+  border: none;
+  background: ${theme.colors.snowDark};
+  padding: 12px ${theme.space[3]};
+  border-radius: ${theme.space[2]};
+  font-size: ${theme.fontSizes[0]};
+  line-height: ${theme.lineHeights.body};
+  resize: none;
+  font-family: sans-serif;
+  &:hover {
+    background: ${theme.colors.snowDarker};
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.8);
+  }
+`

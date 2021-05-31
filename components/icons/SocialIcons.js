@@ -45,7 +45,7 @@ function Twitter(props) {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           className={props.className}
           fill="#000"
