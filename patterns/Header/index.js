@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from 'react-hot-toast';
 
 import Spacer, { OutsideClickDetector } from '../../components/Utils'
 import { Button, IconButton, TextField, TextArea, Label, FormField } from "../../components/Actions";
@@ -21,6 +22,7 @@ import {
 import Send from '../../components/icons/Send';
 import Menu from '../../components/icons/Menu';
 import Close from '../../components/icons/Close';
+import Toast from "../../components/Toast";
 
 
 const MENU_ITEMS = [
@@ -32,7 +34,7 @@ const MENU_ITEMS = [
 export default function Header() {
   const router = useRouter()
   const [mobileExpanded, setMobileExpanded] = useState(false);
-  const [contactPopout, setContactPopout] = useState(true);
+  const [contactPopout, setContactPopout] = useState(false);
 
   let activePath = ''
   let activeRoute = ''
@@ -86,16 +88,18 @@ export default function Header() {
         </ContactPopoutContainer>
       </Grid>
       <HeaderBackground />
+      <Toaster position="top-right" containerStyle={{ position: "absolute", top: "80px", right: "12px" }} />
     </Container>
   )
 }
 
 
 export function ContactPopout(props) {
-  const [sent, setSent] = useState(false);
   const { register, reset, handleSubmit, formState: { errors } } = useForm();
+  const [loading, setLoading] = useState(false)
   
   const onSubmit = async (data) => {
+    setLoading(true)
     await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
@@ -106,20 +110,34 @@ export function ContactPopout(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         if (data.success) {
-          setSent(true)
           reset()
           document.activeElement.blur();
+          toast.custom(
+            <Toast
+              title="Message successfully sent!"
+              subtitle="I'll be in touch with you soon."
+            />
+          , {duration: 2000})
+          props.close()
         } else {
-          console.log("error")
-          // show error toast with email
+          toast.custom(
+          <Toast 
+            title="Something went wrong!"
+            subtitle={<span>If you still want to get in touch, send me an email to <a href="mailto:simonscholz@outlook.com">simonscholz@outlook.com</a></span>}
+            type="error" />
+          )
         }
       })
       .catch(error => {
-        console.log("clientError")
-        console.log(error);
+        toast.custom(
+          <Toast
+            title="Something went wrong!"
+            subtitle={<span>If you still want to get in touch, send me an email to <a href="mailto:simonscholz@outlook.com">simonscholz@outlook.com</a></span>}
+            type="error" />
+        )
       })
+      .finally(() => setLoading(false))
   };
 
   return (
@@ -155,8 +173,10 @@ export function ContactPopout(props) {
           <Button
             type="submit"
             variant="cta"
-            style={{ width: "100%" }}>
-            {sent ? "Message sent!" : "Send message"}
+            style={{ width: "100%" }}
+            disabled={loading}
+            >
+            Send message
           </Button>
         </form>
       </ContactPopoutBase>

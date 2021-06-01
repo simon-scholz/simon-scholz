@@ -92,7 +92,7 @@ export const ContactPopoutBase = styled(Card)`
   margin: 0px;
   width: 240px;
   border: 1px solid ${theme.colors.snowDarker};
-  border: 1px solid ${theme.shadows.largeHover};
+  box-shadow: 1px solid ${theme.shadows.largeHover};
   padding: 16px;
   @media only screen and (min-width: 768px) {
     flex-direction: column;
