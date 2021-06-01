@@ -93,60 +93,47 @@ export default function Header() {
 
 export function ContactPopout(props) {
   const [sent, setSent] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, reset, handleSubmit, formState: { errors } } = useForm();
   
-  const onSubmit = fData => {
-    console.log(fData)
-    console.log(typeof fData)
-
-    const data = new FormData()
-    for (const key in fData) {
-      data.append(key, fData[key])
-    }
-    
-    console.log(data)
-    console.log(typeof data)
-    
-    fetch('https://api.web3forms.com/submit', {
+  const onSubmit = async (data) => {
+    await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        Accept: 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data, null, 2)
     })
-      .then(async (response) => {
-        // let json = await response.json();
-        if (response.status == 200) {
-          console.log(response)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        if (data.success) {
+          setSent(true)
+          reset()
+          document.activeElement.blur();
         } else {
-          console.log(response);
+          console.log("error")
+          // show error toast with email
         }
       })
       .catch(error => {
+        console.log("clientError")
         console.log(error);
       })
-      // .then(function () {
-      //   form.reset();
-      //   setTimeout(() => {
-      //     result.style.display = "none";
-      //   }, 3000);
-      // });
   };
 
   return (
     <OutsideClickDetector onOutsideClick={() => props.close()}>
       <ContactPopoutBase>
         <form onSubmit={handleSubmit(onSubmit)} action="https://api.web3forms.com/submit" method="POST" id="form" style={{ width: "100%" }}>
-          <input type="hidden" name="from_name" value="Simonscholzdesignand.dev Mission Control" {...register("from_name")}/>
-          <input type="hidden" name="api_key" value="8fefae58-f534-465c-ac3e-dd47ced38841" {...register("apiKey")}/>
-          <input type="hidden" name="subject" value="New submission through personal website" {...register("subject")}/>
-          <input type="checkbox" name="botcheck" id="" style={{ display: "none" }} {...register("botcheck")}/>
+          <input type="hidden" value="8fefae58-f534-465c-ac3e-dd47ced38841" {...register("apikey")} />
+          <input type="hidden" value="Simonscholzdesignand.dev Mission Control" {...register("from_name")}/>
+          <input type="hidden" value="New submission through personal website" {...register("subject")}/>
+          <input type="checkbox" id="" style={{ display: "none" }} {...register("botcheck")}></input>
           <FormField>
             <Label htmlFor="email">Email Address</Label>
             <TextField 
             type="email" 
-            name="email" 
             id="email" 
             placeholder="you@company.com" 
             {...register("email", { required: true })}
@@ -157,8 +144,7 @@ export function ContactPopout(props) {
           <FormField>
             <Label htmlFor="message">Your Message</Label>
             <TextArea 
-            rows="5" 
-            name="message" 
+            rows="5"  
             id="message" 
             placeholder="Your Message"
             {...register("message", { required: true })}
@@ -170,7 +156,7 @@ export function ContactPopout(props) {
             type="submit"
             variant="cta"
             style={{ width: "100%" }}>
-            {sent ? "Sent!" : "Send message"}
+            {sent ? "Message sent!" : "Send message"}
           </Button>
         </form>
       </ContactPopoutBase>
