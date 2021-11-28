@@ -13,6 +13,7 @@ const Spacer = styled.div`
     props.size && px(props.size)
     || props.small && "8px"
     || props.large && "32px"
+    || props.extraLarge && "64px"
     || "16px"};
 `
 

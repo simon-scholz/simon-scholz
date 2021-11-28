@@ -28,7 +28,7 @@ import Toast from "../../components/Toast";
 const MENU_ITEMS = [
   {label: "Home", path: "/"},
   {label: "About", path: "/about"},
-  {label: "Work", path: "/work"},
+  {label: "Case Studies", path: "/work"},
 ]
 
 export default function Header() {
@@ -47,7 +47,7 @@ export default function Header() {
     activePath = '/about'
   }
   if (router.pathname.startsWith('/work')) {
-    activeRoute = 'Work'
+    activeRoute = 'Case Studies'
     activePath = '/work'
   }
 

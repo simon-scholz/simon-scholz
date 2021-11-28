@@ -86,20 +86,27 @@ export const ContactPopoutBase = styled(Card)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: absolute;
-  right: -6px;
-  top: -6px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+
   margin: 0px;
-  width: 240px;
   border: 1px solid ${theme.colors.snowDarker};
-  box-shadow: 1px solid ${theme.shadows.largeHover};
+  box-shadow: ${theme.shadows.lightFromBelow};
   padding: 16px;
-  @media only screen and (min-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   button {
     margin-bottom: 0px;
+  }
+  @media only screen and (min-width: ${theme.breakpoints[6]}) {
+    position: absolute;
+    left: auto;
+    bottom: auto;
+    right: -6px;
+    top: -6px;
+    width: 240px;
+    box-shadow: ${theme.shadows.default};
   }
 `
 

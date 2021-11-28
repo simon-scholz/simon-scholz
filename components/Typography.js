@@ -39,6 +39,16 @@ export const Overline = styled.p`
 `
 
 
+export const Mono = styled.p.attrs({
+  className: "Mono"
+})`
+  font-size: ${theme.fontSizes[0]};
+  font-weight: ${theme.fontWeights.body};
+  line-height: ${theme.lineHeights.bodyLong};
+  font-family: JetBrains Mono;
+  color: ${theme.colors.slate};
+`
+
   export const P = styled.p.attrs({
     className: "P"
   })`
