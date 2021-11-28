@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled, { css, withTheme } from "styled-components";
 
 import { A } from '../components/Typography'
-import { Dribbble, Behance, Twitter, Substack } from "../components/icons/SocialIcons";
+import { Dribbble, Twitter } from "../components/icons/SocialIcons";
 import theme from '../styles/theme'
 
 const clickable = css`
@@ -59,9 +59,9 @@ function Footer() {
       <Outer>
         <Container>
           <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank" rel="noopener"><Dribbble className="icon"/></ClickableIcon>
-          <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank" rel="noopener"><Behance className="icon" /></ClickableIcon>
+          {/* <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank" rel="noopener"><Behance className="icon" /></ClickableIcon> */}
           <ClickableIcon href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener"><Twitter className="icon" /></ClickableIcon>
-          <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank" rel="noopener"><Substack className="icon" /></ClickableIcon>
+          {/* <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank" rel="noopener"><Substack className="icon" /></ClickableIcon> */}
           <Link href="/impressum"><FooterLink href="/impressum">Impressum – Legal Notice</FooterLink></Link>
         </Container>
       </Outer>
