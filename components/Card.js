@@ -19,7 +19,6 @@ const Card = styled.div`
   justify-content: flex-start;
   width: 100%;
   height: auto;
-  border-radius: 0px;
   border: 1px solid ${theme.colors.snowDark};
   border-radius: 8px;
   cursor: pointer;

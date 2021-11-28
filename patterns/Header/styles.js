@@ -5,7 +5,7 @@ import theme from '../../styles/theme';
 import { Button } from '../../components/Actions'
 import { P, A } from '../../components/Typography'
 import Card from '../../components/Card'
-import Spacer, { OutsideClickDetector } from '../../components/Utils'
+
 
 export const Container = styled.header`
   position: fixed;
@@ -31,6 +31,7 @@ export const Grid = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  grid-template-columns: 1fr auto;
 `
 
 export const HeaderBackground = styled.div`
@@ -45,6 +46,15 @@ export const HeaderBackground = styled.div`
   backdrop-filter: saturate(180%) blur(20px);
 `
 
+export const ContactPopoutContainer = styled.div`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+
 export const ContactButton = styled(Button)`
   padding: 6px 16px;
   font-size: 14px;
@@ -53,7 +63,7 @@ export const ContactButton = styled(Button)`
   flex-direction: row;
   align-items: center;
   position: absolute;
-  right: 12px;
+  margin: 0;
   p {
     margin: 0px;
     display: none;
@@ -72,70 +82,31 @@ export const ContactButton = styled(Button)`
   }
 `
 
-const ContactPopoutBase = styled(Card)`
+export const ContactPopoutBase = styled(Card)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: absolute;
-  right: 12px;
-  top: 34px;
+  right: -6px;
+  top: -6px;
+  margin: 0px;
   width: 240px;
-  height: 204px;
-  border: 1px solid ${theme.colors.blue50};
+  border: 1px solid ${theme.colors.snowDarker};
+  box-shadow: 1px solid ${theme.shadows.largeHover};
   padding: 16px;
   @media only screen and (min-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    height: 188px;
+  }
+  button {
+    margin-bottom: 0px;
   }
 `
 
-const ConctactPopperP = styled(P)`
-  font-size: ${theme.fontSizes[0]};
-  line-height: ${theme.lineHeights.code};
-  color: ${theme.colors.grey};
-  margin-top: 0px;
-`
 
-export function ContactPopout(props) {
-  const [copied, setCopied] = useState(false);
 
-  const copyToClipboard = (text) => {
-      var dummy = document.createElement("input");
-      document.body.appendChild(dummy);
-      dummy.setAttribute('value', text);
-      dummy.select();
-      document.execCommand("copy");
-      document.body.removeChild(dummy);
-      setCopied(true)
-    };
 
-  const sendEmail = () => {
-    var link = "mailto:simonscholz@outlook.com";
-    window.location.href = link;
-  }
 
-  return(
-    <OutsideClickDetector onOutsideClick={() => props.close()}>
-      <ContactPopoutBase>
-        <ConctactPopperP>Huh? A popup? Well, I'm not a huge fan of mailto-links myself, so I figured I'd let you choose...</ConctactPopperP>
-        <Spacer />
-        <Button
-          onClick={sendEmail}
-          style={{width: "100%"}}>
-          Send email now
-        </Button>
-        <Spacer />
-        <Button
-          onClick={() => copyToClipboard("simonscholz@outlook.com")}
-          variant="cta"
-          style={{width: "100%"}}>
-          {copied ? "Copied!" : "Copy email address"}
-        </Button>
-      </ContactPopoutBase>
-    </OutsideClickDetector>
-  )
-}
 
 export const MainItems = styled.div`
   width: 100%;
