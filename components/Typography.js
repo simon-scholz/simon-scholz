@@ -60,6 +60,17 @@ export const Overline = styled.p`
       font-weight: 400;
       word-break: break-word;
       hyphens: auto;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        top: calc(100% + 2px);
+        left: 0;
+        background: ${theme.colors.smokeDarker};
+      }
     }
     a:hover {
       text-decoration: none;
@@ -68,9 +79,13 @@ export const Overline = styled.p`
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
+      &:after {
+        position: absolute;
+        display: none;
+      }
     }
     i {
-      color: ${theme.colors.smokeDark};
+      color: ${theme.colors.concrete};
       font-size: ${theme.fontSizes[0]};
     }
     code {
