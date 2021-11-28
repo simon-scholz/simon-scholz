@@ -112,17 +112,15 @@ export default function About() {
 
       </ImageContainer>
       <P>
-      👋 I'm a designer who codes. I design, build, and ship digital products. Right now I'm building a design system and various web application interfaces at a soon to be announced FinTech startup.
+          👋 I'm a designer who codes. I design, build, and ship digital products. Right now I'm a product manager and UX/UI lead at 360dialog, a global Facebook business solution provider,
+          enabling companies of all sizes and from all over the world to use WhatsApp.
       </P>
+      
       <P>I've previously co-founded <a href="https://www.cdf.one/" target="_blank" rel="noopener">CDF Technologies</a>, where I led the design and creative direction of multiple B2B FinTech products
       and design systems. Apart from the <a href="https://www.cdf.one/" target="_blank" rel="noopener">CDF One</a> app I designed and implemented <a href="https://pitchtable.io" target="_blank">pitchtable.io</a>.
       </P>
       <P>
-      Before CDF I worked as an automotive engineer, specializing in thermal and mechanical load collective simulation of powertrain components by day.
-      By night I started my first foray into the startup ecosystem by designing and developing a fitness & food app and chatbot.
-      </P>
-      <P>
-      I've recently started using Twitter more often. So find me <a href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener">there</a> or just shoot me an email at <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}><p>simonscholz@outlook.com</p></InlineButton>{copied && <i> (Copied!)</i>}.
+      Before CDF I worked as an automotive engineer, specializing in thermal and mechanical load collective simulation of powertrain components.
       </P>
       <P>
       I'm excited to hear about your project! When I'm not answering immediately, I'm probably gone <a href="https://www.strava.com/athletes/1280244" target="_blank" rel="noopener">riding</a>.

@@ -34,10 +34,9 @@ export default function Home() {
     <Main>
         <Heading2>Hey, I'm Simon</Heading2>
         <P>
-          I'm a designer who codes.
           I design, build, and ship digital products.
-          Right now I'm building a design system and various web application interfaces at a soon to be announced FinTech startup.
-          I'm based in Munich.
+          Right now I'm a product manager and UX/UI lead at 360dialog, a global Facebook business solution provider, 
+          enabling companies of all sizes and from all over the world to use WhatsApp.
         </P>
       <Spacer small/>
       <Link href="/about"><A>More about me<Rarr/></A></Link>
