@@ -1,12 +1,11 @@
-import { useState } from "react";
 import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { Heading1, Heading2, P, A, Rarr, Arrow} from '../components/Typography'
-import { Button, Flip } from '../components/Actions'
+import { Heading2, P, A, Rarr } from '../components/Typography'
 import Spacer from "../components/Utils"
 import CaseStudyCard from "../patterns/CaseStudyCard";
+import WorkList from "../patterns/WorkList";
 
 const Main = styled.main`
   padding: 1rem;
@@ -22,6 +21,12 @@ export default function Home() {
   return (
     <div>
     <Head>
+        <link
+          rel="preload"
+          href="/fonts/JetBrains-Mono/JetBrainsMono-Regular.woff2"
+          as="font"
+          crossOrigin=""
+        />
       <title>Simon Scholz</title>
       <meta name="description" content="Simon Scholz - Designer, who codes" />
       <meta name="keywords" content="UX, UI, Product Design, Development" />
@@ -41,6 +46,10 @@ export default function Home() {
       <Spacer small/>
       <Link href="/about"><A>More about me<Rarr/></A></Link>
       <Spacer large/>
+
+      <Heading2>Work</Heading2>
+      <WorkList /> 
+      <Spacer large />
 
       <Heading2>Case studies</Heading2>
       <P>These are some of my previous projects.</P>
