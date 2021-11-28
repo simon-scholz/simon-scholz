@@ -7,16 +7,32 @@ const TableRow = styled.div.attrs({
     className: "TableRow"
 })`
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 32px;
     p {
         white-space: nowrap;
         margin: 4px 0px;
+        line-height: ${theme.lineHeights.code};
+    }
+    p:first-child {
+        font-weight: ${theme.fontWeights.subheading};
     }
     .Mono {
-        padding-left: 24px;
+        padding-left: 0px;
         white-space: pre;
         color: ${theme.colors.silver};
+    }
+    @media only screen and (min-width: ${theme.breakpoints[6]}) {
+        flex-direction: row;
+        align-items: baseline;
+        padding-top: 0px;
+        p {
+            font-weight: ${theme.fontWeights.body};
+        }
+        .Mono {
+            padding-left: 24px;
+        }
     }
 `
 
@@ -30,6 +46,11 @@ const Dots = styled.div.attrs({
     font-size: 8px;
     overflow: hidden;
     color: ${theme.colors.smokeDarker};
+    white-space: pre;
+    display: none;
+    @media only screen and (min-width: ${theme.breakpoints[6]}) {
+        display: inline;
+    }
 `
 
 const JobsList = [
@@ -45,7 +66,7 @@ const WorkList = () => {
             {JobsList.map(({company, role, period}, idx) => (
                 <TableRow key={"job_row_"+idx}>
                     <P>{company}</P>
-                    <Dots>{".".repeat(90)}</Dots>
+                    <Dots>{".".repeat(100)}</Dots>
                     <P style={{textAlign: "right"}}>{role}</P>
                     <Mono>{period}</Mono>
                 </TableRow>

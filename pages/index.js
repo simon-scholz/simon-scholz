@@ -45,11 +45,12 @@ export default function Home() {
         </P>
       <Spacer small/>
       <Link href="/about"><A>More about me<Rarr/></A></Link>
-      <Spacer large/>
+      <Spacer extraLarge/>
 
       <Heading2>Work</Heading2>
       <WorkList /> 
-      <Spacer large />
+      <Spacer extraLarge />
+
 
       <Heading2>Case studies</Heading2>
       <P>These are some of my previous projects.</P>
