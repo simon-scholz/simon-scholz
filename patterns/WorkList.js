@@ -35,7 +35,7 @@ const Dots = styled.div.attrs({
 const JobsList = [
     { company: "360dialog", role: "Product Manager & UX/UI Lead", period: "2020—  "},
     { company: "Divizend", role: "Product Designer & Frontend Engineer", period: "2018—20"  },
-    { company: "CDF Technologies", role: "Co-Founder", period: "2018—21" },
+    { company: "CDF Technologies", role: "Co-Founder", period: "2018—20" },
     { company: "Audi", role: "Powertrain Simulation Engineer", period: "2015—18" }
 ]
 
