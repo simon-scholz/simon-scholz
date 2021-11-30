@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { lightTheme as theme} from '../../styles/theme';
+import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
 
 import { Button } from '../../components/Actions'
 import { P, A } from '../../components/Typography'
@@ -9,9 +10,10 @@ import Card from '../../components/Card'
 
 export const Container = styled.header`
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* right: 0px; */
   z-index: 4;
   font-weight: 600;
   font-size: 16px;
@@ -21,17 +23,23 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 4px 8px;
-  margin: 0px;
-  /* height: 56px; */
+  width: 100%;
+  max-width: 700px;
 `
 
-export const Grid = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  grid-template-columns: 1fr auto;
+
+export const StyledToolbar = styled(ToolbarPrimitive.Root)`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 6px;
+    background: ${theme.colors.white};
+    border: 1px solid ${theme.colors.snowDarker};
+    box-shadow: ${theme.shadows.default};
+    cursor: default;
+    padding: 8px;
 `
 
 export const HeaderBackground = styled.div`
@@ -47,23 +55,21 @@ export const HeaderBackground = styled.div`
 `
 
 export const ContactPopoutContainer = styled.div`
-  position: absolute;
-  top: 12px;
-  right: 12px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 `
 
 export const ContactButton = styled(Button)`
-  padding: 6px 16px;
-  font-size: 14px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: default;
   display: ${props =>
     props.hide ? "none" : "flex"};
   flex-direction: row;
   align-items: center;
-  position: absolute;
-  margin: 0;
   p {
     margin: 0px;
     display: none;
@@ -103,8 +109,8 @@ export const ContactPopoutBase = styled(Card)`
     position: absolute;
     left: auto;
     bottom: auto;
-    right: -6px;
-    top: -6px;
+    right: -9px;
+    top: 44px;
     width: 240px;
     box-shadow: ${theme.shadows.default};
   }
@@ -116,10 +122,9 @@ export const ContactPopoutBase = styled(Card)`
 
 
 export const MainItems = styled.div`
-  width: 100%;
-  padding: 8px;
-  max-width: 700px;
-  margin: 0 auto;
+  /* width: 100%;
+  max-width: 700px; */
+  /* margin: 0 auto; */
   display: none;
   flex-direction: row;
   align-items: center;
@@ -161,25 +166,28 @@ export const LabelMobile = styled(P)`
 `
 
 export const MenuLink = styled(A)`
-  font-size: 16px;
-  padding: 12px 16px;
-  margin-right: 12px;
+  cursor: default;
+  font-size: 12px;
+  padding: 6px 12px;
+  margin-right: 4px;
   color: ${props =>
-    props.active ? theme.colors.blueDark : theme.colors.grey
+    props.active ? theme.colors.purpleDark : theme.colors.grey
   };
   background: ${props =>
-    props.active ? "rgba(0,122,255, 0.1)" : "transparent"};
+    props.active ? "rgba(128, 90, 213, 0.14)" : "transparent"};
   border-radius: 4px;
   &:hover {
-    color: ${theme.colors.blueDark};
-    background: rgba(0,122,255, 0.1);
-    border-radius: 4px;
+    color: ${theme.colors.purpleDark};
+    background: ${props =>
+  props.active ? "rgba(128, 90, 213, 0.14)" : " rgba(128, 90, 213, 0.05)"};
+    border-radius: 6px;
   }
   width: 100%;
   margin-top: 8px;
   @media only screen and (min-width: ${theme.breakpoints[4]}) {
-    font-size: 14px;
+    font-size: 12px;
     width: auto;
     margin-top: 0px;
   }
 `
+

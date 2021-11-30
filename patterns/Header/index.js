@@ -17,18 +17,23 @@ import {
   ContactPopoutBase,
   ContactButton,
   HeaderBackground,
-  LabelMobile
+  LabelMobile,
+  StyledToolbar
 } from "./styles";
 import Send from '../../components/icons/Send';
 import Menu from '../../components/icons/Menu';
 import Close from '../../components/icons/Close';
 import Toast from "../../components/Toast";
 
+import { HomeIcon, UserIcon, CollectionIcon } from '@heroicons/react/solid'
+import Collection from "../../components/icons/Collection";
+
+
 
 const MENU_ITEMS = [
-  {label: "Home", path: "/"},
+  { label: "Home", path: "/"},
   {label: "About", path: "/about"},
-  {label: "Case Studies", path: "/work"},
+  { label: "Case Studies", path: "/work"},
 ]
 
 export default function Header() {
@@ -57,38 +62,40 @@ export default function Header() {
 
   return(
     <Container>
-      <Grid>
-        <MainItems>
-        {MENU_ITEMS.map((item, idx) => (
-          <Link key={"linkId_"+idx} href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
-        ))}
-        </MainItems>
-        <MobileContainer>
-          {mobileExpanded ?
-            <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%"}}>
-            <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Close /></IconButton>
-            <MobileMainItems>
-            {MENU_ITEMS.map((item) => (
-              <Link href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
-            ))}
-            </MobileMainItems>
-            </div>
-            :
-            <>
-            <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Menu /></IconButton>
-            <LabelMobile>{activeRoute}</LabelMobile>
-            </>
-          }
-        </MobileContainer>
-        <ContactPopoutContainer>
-          <ContactButton variant="cta" hide={mobileExpanded} onClick={() => setContactPopout(!contactPopout)}><Send /><p>Contact</p></ContactButton>
-          {contactPopout &&
-            <ContactPopout close={() => setContactPopout(false)}/>
-          }
-        </ContactPopoutContainer>
-      </Grid>
-      <HeaderBackground />
-      <Toaster position="top-right" containerStyle={{ position: "absolute", top: "80px", right: "12px" }} />
+      <StyledToolbar>
+          <MainItems>
+          {MENU_ITEMS.map((item, idx) => (
+            <Link key={"linkId_"+idx} href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
+          ))}
+          </MainItems>
+          {/* <MobileContainer>
+            {mobileExpanded ?
+              <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%"}}>
+              <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Close /></IconButton>
+              <MobileMainItems>
+              {MENU_ITEMS.map((item) => (
+                <Link href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
+              ))}
+              </MobileMainItems>
+              </div>
+              :
+              <>
+              <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Menu /></IconButton>
+              <LabelMobile>{activeRoute}</LabelMobile>
+              </>
+            }
+          </MobileContainer> */}
+          <ContactPopoutContainer>
+            <ContactButton variant="cta" hide={mobileExpanded} onClick={() => setContactPopout(!contactPopout)}>Contact</ContactButton>
+            {contactPopout &&
+              <ContactPopout close={() => setContactPopout(false)}/>
+            }
+          </ContactPopoutContainer>
+        
+        </StyledToolbar>
+        {/* <HeaderBackground /> */}
+        <Toaster position="top-right" containerStyle={{ position: "absolute", top: "80px", right: "12px" }} />
+      
     </Container>
   )
 }
