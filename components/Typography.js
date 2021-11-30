@@ -100,18 +100,18 @@ export const Mono = styled.p.attrs({
     }
     code {
       font-size: ${theme.fontSizes[0]};
-      box-shadow: inset 0 0 0 1px var(--border-primary);
+      box-shadow: inset 0 0 0 1px var(--gray);
     }
     a > code {
       padding: ${theme.space[0]} ${theme.space[1]};
-      box-shadow: inset 0 0 0 1px rgba(var(--text-link-rgb), 0.16);
+      box-shadow: inset 0 0 0 1px rgba(var(--purple), 0.16);
       border-radius: 4px;
       display: inline-block;
-      background: rgba(var(--text-link-rgb), 0.12);
-      color: var(--text-link);
+      background: rgba(var(--purple), 0.12);
+      color: var(--purple);
     }
     a:hover > code {
-      background: rgba(var(--text-link-rgb), 0.16);
+      background: rgba(var(--purple), 0.16);
     }
     &.show-more-enter, .show-more-appear {
       opacity: 0;
@@ -284,7 +284,7 @@ export const code = css`
   border-radius: 4px;
   display: inline-block;
   box-shadow: none;
-  background: var(--bg-inset);
+  background: var(--background);
   text-shadow: none;
   @media (max-width: ${theme.breakpoints[4]}) {
     font-size: ${theme.fontSizes[0]};

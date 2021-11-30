@@ -100,7 +100,7 @@ export const IconButton = styled.button.attrs({
 export const Button = styled.button`
 ${buttonBase}
 border: 1px solid ${props =>
-  props.variant==="cta" && theme.colors["accent-blue"].light
+  props.variant==="cta" && theme.colors.blue50
   || theme.colors.smokeDarker
 };
 border-style: ${props =>
@@ -108,25 +108,25 @@ border-style: ${props =>
   || "solid"
 };
 color: ${props =>
-  props.variant==="cta" && theme.colors["text-primary"].dark
+  props.variant==="cta" && theme.colors.white
   || theme.colors.concrete
 };
 background: ${props =>
-  props.variant==="cta" && theme.colors["accent-blue"].light
+  props.variant==="cta" && theme.colors.blue50
   || "none"
 };
 transition: background color border border-style ${theme.animations.hover};
 &:hover {
   background: ${props =>
-    props.variant==="cta" && theme.colors["text-primary"].dark
+    props.variant==="cta" && theme.colors.blue60
     || "none"
   };
   color: ${props =>
-    props.variant==="cta" && theme.colors["accent-blue"].light
+    props.variant==="cta" && theme.colors.white
     || theme.colors.black
   };
   border: 1px solid ${props =>
-    props.variant==="cta" && theme.colors["accent-blue"].light
+    props.variant==="cta" && theme.colors.blue50
     || theme.colors.black
   };
   border-style: ${props =>
@@ -138,15 +138,15 @@ transition: background color border border-style ${theme.animations.hover};
 &:focus {
   outline: none;
   background: ${props =>
-    props.variant==="cta" && theme.colors["text-primary"].dark
+    props.variant==="cta" && theme.colors.white
     || "none"
   };
   color: ${props =>
-    props.variant==="cta" && theme.colors["accent-blue"].light
+    props.variant==="cta" && theme.colors.blue50
     || theme.colors.black
   };
   border: 1px solid ${props =>
-    props.variant==="cta" && theme.colors["accent-blue"].light
+    props.variant==="cta" && theme.colors.blue50
     || theme.colors.black
   };
   border-style: ${props =>
@@ -162,7 +162,7 @@ transition: background color border border-style ${theme.animations.hover};
     right: -5px;
     border-radius: 7px;
     border: 1.5px solid ${props =>
-      props.variant==="cta" && theme.colors["accent-blue"].light
+      props.variant==="cta" && theme.colors.blue60
       || theme.colors.black
     };
   }
