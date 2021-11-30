@@ -1,7 +1,7 @@
 import React from "react";
 import { P, Mono } from '../components/Typography'
 import styled from "styled-components"
-import theme from "../styles/theme";
+import { lightTheme as theme} from "../styles/theme";
 
 const TableRow = styled.div.attrs({
     className: "TableRow"

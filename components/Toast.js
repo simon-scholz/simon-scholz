@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import theme from '../styles/theme'
+import { lightTheme as theme} from '../styles/theme'
 import Card from "./Card"
 import Check from "./icons/Check"
 import Exclamation from "./icons/Exclamation"

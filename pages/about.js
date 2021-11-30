@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from 'styled-components'
-import theme from '../styles/theme';
+import { lightTheme as theme} from '../styles/theme';
 
 import { Heading1, Heading2, P, A, Rarr, TurnRight} from '../components/Typography'
 import Spacer from "../components/Utils"

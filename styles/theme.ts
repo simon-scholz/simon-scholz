@@ -1,6 +1,14 @@
+import { DefaultTheme } from "styled-components";
 import { COLORS } from './colors'
 
-const theme = {
+declare module "styled-components" {
+  export interface DefaultTheme {
+    primaryColor: string;
+    secondaryColor: string;
+  }
+}
+
+export const lightTheme: DefaultTheme = {
   breakpoints: [
     '1440px', // 0
     '1256px', // 1
@@ -67,7 +75,12 @@ const theme = {
     active: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
   },
   colors: COLORS
-}
+};
+
+export const darkTheme: DefaultTheme = {
+  primaryColor: "#fff",
+  secondaryColor: "#cacaca",
+};
 
 
-export default theme
+

@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
-import theme from '../styles/theme'
+import { lightTheme as theme } from '../styles/theme'
 
 
 const heading = css`

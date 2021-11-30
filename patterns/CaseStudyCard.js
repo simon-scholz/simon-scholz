@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from "styled-components";
-import theme from '../styles/theme';
+import { lightTheme as theme} from '../styles/theme';
 
 import { Heading2, P} from '../components/Typography'
 import Card, { CardContent, CardImage } from "../components/Card";

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import styled, { css } from 'styled-components'
-import theme from '../styles/theme'
+import { lightTheme as theme} from '../styles/theme'
 import useOutsideClick from "../hooks/useOutsideClick";
 
 const px = (v) => {

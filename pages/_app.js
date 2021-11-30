@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import '../styles/global.css'
-import theme from '../styles/theme'
+import { lightTheme as theme} from '../styles/theme'
 import styled from "styled-components";
 
 import Footer from '../patterns/Footer';

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import theme from '../../styles/theme';
+import { lightTheme as theme} from '../../styles/theme';
 
 import { Button } from '../../components/Actions'
 import { P, A } from '../../components/Typography'

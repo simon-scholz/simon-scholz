@@ -3,7 +3,7 @@ import styled, { css, withTheme } from "styled-components";
 
 import { A } from '../components/Typography'
 import { Dribbble, Twitter } from "../components/icons/SocialIcons";
-import theme from '../styles/theme'
+import { lightTheme as theme} from '../styles/theme'
 
 const clickable = css`
   padding: 16px;
