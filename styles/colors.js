@@ -12,10 +12,12 @@ export const COLORS = {
   slate: 'rgb(66, 70, 83)',
   concrete: 'rgb(102, 116, 136)',
   silver: 'rgb(132, 146, 166)',
+
+  purpleLight: "#805AD5",
+  purple: "#6B46C1",
+  purpleDark: "#553C9A",
   
-  blue10: "#cce4ff",
-  blue30: "#66afff",
   
-  blue50: '#007AFF',
-  blue60: '#0062cc'
+  blue: '#007AFF',
+  blueDark: '#0062cc'
 }

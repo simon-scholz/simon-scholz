@@ -165,13 +165,13 @@ export const MenuLink = styled(A)`
   padding: 12px 16px;
   margin-right: 12px;
   color: ${props =>
-    props.active ? theme.colors.blue60 : theme.colors.grey
+    props.active ? theme.colors.blueDark : theme.colors.grey
   };
   background: ${props =>
     props.active ? "rgba(0,122,255, 0.1)" : "transparent"};
   border-radius: 4px;
   &:hover {
-    color: ${theme.colors.blue60};
+    color: ${theme.colors.blueDark};
     background: rgba(0,122,255, 0.1);
     border-radius: 4px;
   }

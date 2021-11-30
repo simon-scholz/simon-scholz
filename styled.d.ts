@@ -14,10 +14,13 @@ interface IColors {
     slate: string
     concrete: string
     silver: string
-    blue10: string
-    blue30: string
-    blue50: string
-    blue60: string
+    
+    blue: string
+    blueDark: string
+
+    purpleLight: string
+    purple: string,
+    purpleDark: string
 }
 
 declare module 'styled-components' {

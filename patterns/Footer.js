@@ -9,12 +9,12 @@ const clickable = css`
   padding: 16px;
   cursor: pointer;
   .icon {
-    fill: ${theme.colors.blue50};
+    fill: ${theme.colors.purple};
     fill-opacity: 0.4;
   }
   &:hover {
     .icon {
-      /* fill: ${theme.colors.blue60}; */
+      /* fill: ${theme.colors.purpleDark}; */
       fill-opacity: 1;
       transition: fill-opacity ${theme.animations.hover};
     }
@@ -47,7 +47,7 @@ const FooterLink = styled(A)`
   margin-left: auto;
   &:hover {
     opacity: 1;
-    color: ${theme.colors.blue50};
+    color: ${theme.colors.purple};
   }
   @media only screen and (min-width: ${theme.breakpoints[7]}) {
     font-size: 0.7rem;

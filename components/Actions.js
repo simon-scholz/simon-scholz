@@ -100,7 +100,7 @@ export const IconButton = styled.button.attrs({
 export const Button = styled.button`
 ${buttonBase}
 border: 1px solid ${props =>
-  props.variant==="cta" && theme.colors.blue50
+  props.variant==="cta" && theme.colors.purple
   || theme.colors.smokeDarker
 };
 border-style: ${props =>
@@ -112,13 +112,13 @@ color: ${props =>
   || theme.colors.concrete
 };
 background: ${props =>
-  props.variant==="cta" && theme.colors.blue50
+  props.variant==="cta" && theme.colors.purple
   || "none"
 };
 transition: background color border border-style ${theme.animations.hover};
 &:hover {
   background: ${props =>
-    props.variant==="cta" && theme.colors.blue60
+    props.variant==="cta" && theme.colors.purpleDark
     || "none"
   };
   color: ${props =>
@@ -126,7 +126,7 @@ transition: background color border border-style ${theme.animations.hover};
     || theme.colors.black
   };
   border: 1px solid ${props =>
-    props.variant==="cta" && theme.colors.blue50
+    props.variant==="cta" && theme.colors.purple
     || theme.colors.black
   };
   border-style: ${props =>
@@ -142,11 +142,11 @@ transition: background color border border-style ${theme.animations.hover};
     || "none"
   };
   color: ${props =>
-    props.variant==="cta" && theme.colors.blue50
+    props.variant==="cta" && theme.colors.purple
     || theme.colors.black
   };
   border: 1px solid ${props =>
-    props.variant==="cta" && theme.colors.blue50
+    props.variant==="cta" && theme.colors.purple
     || theme.colors.black
   };
   border-style: ${props =>
@@ -162,7 +162,7 @@ transition: background color border border-style ${theme.animations.hover};
     right: -5px;
     border-radius: 7px;
     border: 1.5px solid ${props =>
-      props.variant==="cta" && theme.colors.blue60
+      props.variant==="cta" && theme.colors.purpleDark
       || theme.colors.black
     };
   }

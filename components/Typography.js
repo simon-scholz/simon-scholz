@@ -204,11 +204,11 @@ const arrows = css`
   .animated-arrow {
     .arrow-tip {
       fill: ${props =>
-        props.secondary ? theme.colors.concrete : theme.colors.blue50};
+        props.secondary ? theme.colors.concrete : theme.colors.blue};
     }
     .arrow-base {
       stroke: ${props =>
-        props.secondary ? theme.colors.concrete : theme.colors.blue50};
+        props.secondary ? theme.colors.concrete : theme.colors.blue};
     }
   }
   &:hover {
@@ -230,14 +230,14 @@ const arrows = css`
       .arrow-tip {
         transform: translateX(0px);
         fill: ${props =>
-          props.secondary ? theme.colors.black : theme.colors.blue60};
+          props.secondary ? theme.colors.black : theme.colors.blueDark};
         transition: transform 100ms cubic-bezier(0.165, 0.84, 0.44, 1);
       }
       .arrow-base {
         stroke-dasharray: 12;
         stroke-dashoffset: -12;
         stroke: ${props =>
-          props.secondary ? theme.colors.black : theme.colors.blue60};
+          props.secondary ? theme.colors.black : theme.colors.blueDark};
         animation: ${dash} 100ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       }
     }
@@ -256,7 +256,7 @@ const a = css`
   line-height: ${theme.lineHeights.body};
   letter-spacing: -0.1px;
   color: ${props =>
-    props.secondary ? theme.colors.concrete : theme.colors.blue50};
+    props.secondary ? theme.colors.concrete : theme.colors.blue};
   text-decoration: none;
   font-weight: 500;
   word-break: break-word;
@@ -267,7 +267,7 @@ const a = css`
     cursor: pointer;
     text-decoration: none;
     color: ${props =>
-      props.secondary ? theme.colors.black : theme.colors.blue60};
+      props.secondary ? theme.colors.black : theme.colors.blueDark};
   }
 `
 
@@ -367,7 +367,7 @@ const animatedArrow = css`
   display: inline-block;
   margin-left: 8px;
   .arrow-base {
-    stroke: ${theme.colors.blue50};
+    stroke: ${theme.colors.blue};
     stroke-opacity: 1;
     stroke-dasharray: 12;
     stroke-dashoffset: -12;
@@ -375,7 +375,7 @@ const animatedArrow = css`
     animation: ${dashReverse} 200ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   .arrow-tip {
-    fill: ${theme.colors.blue50};
+    fill: ${theme.colors.blue};
     transform: translateX(-4px);
     transition: transform ${theme.animations.default} ;
   }
