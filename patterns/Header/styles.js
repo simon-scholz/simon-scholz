@@ -119,8 +119,6 @@ export const ContactPopoutBase = styled(Card)`
 
 
 
-
-
 export const MainItems = styled.div`
   /* width: 100%;
   max-width: 700px; */
@@ -165,15 +163,28 @@ export const LabelMobile = styled(P)`
   color: ${theme.colors.black}
 `
 
+export const HoverBackground = styled.div`
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  width: ${props => props.width};
+  border-radius: 4px;
+  background: rgba(128, 90, 213, 0.05);
+  transform: translateX(${props => props.x});
+  opacity: ${props => props.hide ? "0" : "1"};
+  transition: transform ${props => props.hide ? "1ms" : "150ms"}, opacity 50ms;
+`
+
 export const MenuLink = styled(A)`
+  display: block;
   cursor: default;
   font-size: 12px;
   padding: 6px 12px;
   color: ${props =>
     props.active ? theme.colors.purpleDark : theme.colors.grey
   };
-  /* background: ${props =>
-    props.active ? "rgba(128, 90, 213, 0.14)" : "transparent"}; */
+  background: ${props =>
+    props.active ? "rgba(128, 90, 213, 0.14)" : "transparent"};
   border-radius: 4px;
   position: relative;
   width: 100%;
@@ -183,77 +194,19 @@ export const MenuLink = styled(A)`
     width: auto;
     margin-top: 0px;
   }
-  
-  /* box-shadow: inset 0 0 0 0 rgba(128, 90, 213, 0.05);
-  transition: ease-out 0.4s; */
   &:hover {
     color: ${theme.colors.purpleDark};
-    /* box-shadow: inset 400px 0 0 0 rgba(128, 90, 213, 0.05);
-    transition: ease-out 0.4s; */
   }
-
-  position: relative;
-  overflow: hidden;
-  ${props => props.enterFrom === "left" && css`
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 0;
-        right: 100%;
-        border-radius: 6px;
-        background: rgba(128, 90, 213, 0.05);
-        transition: ${theme.animations.hover};
-      }
-      &:hover:after {
-          right: 0px;
-          transition: ${theme.animations.hover};
-      }
-  `}
-  
-
-  ${props => props.enterFrom === "right" && css`
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 100%;
-        right: 0px;
-        border-radius: 6px;
-        background: rgba(128, 90, 213, 0.05);
-        transition: ${theme.animations.hover};
-      }
-      &:hover:after {
-          left: 0px;
-          transition: ${theme.animations.hover};
-      }
-  `}
-
-
-  ${props => props.enterFrom === "other" && css`
-    &:after {
-        content: " ";
-        position: absolute;
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        right: 0px;
-        border-radius: 6px;
-        background: rgba(128, 90, 213, 0.05);
-        opacity: 0;
-        transition: ${theme.animations.hover};
-      }
-      &:hover:after {
-          opacity: 1;
-          transition: ${theme.animations.hover};
-      }
-  `}
-
-  
+  /* ${props => props.active && css`
+    &:before {
+      position: absolute;
+      content: " ";
+      width: calc(100% - 4px);
+      height: 2px;
+      border-radius: 2px;
+      top: calc(100% + 2px);
+      left: 1px;
+      background: ${theme.colors.purpleDark};
+    }
+  `} */
 `
-
-// background: ${props => */
-    // props.active ? "rgba(128, 90, 213, 0.14)" : "rgba(128, 90, 213, 0.05)"};
-    //   border-radius: 6px;

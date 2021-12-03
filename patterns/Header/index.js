@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useForm } from "react-hook-form";
@@ -18,7 +18,8 @@ import {
   ContactButton,
   HeaderBackground,
   LabelMobile,
-  StyledToolbar
+  StyledToolbar,
+  HoverBackground
 } from "./styles";
 import Send from '../../components/icons/Send';
 import Menu from '../../components/icons/Menu';
@@ -60,16 +61,44 @@ export default function Header() {
     setMobileExpanded(false)
   }, [router])
 
-  
 
+  
+  const [widthActiveElement, setWidthActiveElement] = useState("0px")
+  const [xActiveElement, setXActiveElement] = useState("0px")
+  const [hideActiveElement, setHideActiveElement] = useState(true)
+
+  const menuRef = useRef()
+
+  const getPosition = (e, isActive) => {
+    const parent = menuRef.current.getBoundingClientRect()
+    const rect = e.target.getBoundingClientRect()
+
+    const width = rect.width
+    const position = rect.left - parent.left
+
+    
+    setHideActiveElement(isActive)
+    setXActiveElement((position - 10)+"px")
+    setWidthActiveElement(width+"px")
+  };
+
+  
   
   return(
     <Container>
-      <StyledToolbar>
-          <MainItems>
+      <StyledToolbar ref={menuRef}>
+          <MainItems onMouseEnter={() => setHideActiveElement(false)} onMouseLeave={() => setHideActiveElement(true)}>
+          <HoverBackground width={widthActiveElement} x={xActiveElement} hide={hideActiveElement} />
           {MENU_ITEMS.map((item, idx) => (
             <Link key={"linkId_" + idx} href={item.path}>
-              <MenuItemAnimated idx={idx} item={item}/>
+              <MenuLink
+                onMouseEnter={(e) => getPosition(e, activePath === item.path)}
+                href={item.path}
+                active={activePath === item.path}
+                onClick={() => setHideActiveElement(true)}
+              >
+                {item.label}
+              </MenuLink>
             </Link>
           ))}
           </MainItems>
@@ -106,76 +135,6 @@ export default function Header() {
 }
 
 
-export const MenuItemAnimated = ({idx, item}) => {
-  const router = useRouter()
-  const [enterFrom, setEnterFrom] = useState("other")
-  const [leaveTo, setLeaveTo] = useState("other")
-  
-
-  let activePath = ''
-  let activeRoute = ''
-  if (router.pathname === '/') {
-    activeRoute = 'Home'
-    activePath = '/'
-  }
-  if (router.pathname.startsWith('/about')) {
-    activeRoute = 'About'
-    activePath = '/about'
-  }
-  if (router.pathname.startsWith('/work')) {
-    activeRoute = 'Case Studies'
-    activePath = '/work'
-  }
-
-  const getDirection = function (e, entering) {
-    var rect = e.target.getBoundingClientRect();
-    var x = e.clientX - rect.left; //x position within the element.
-    let enterFromTmp
-    let leaveToTmp
-
-    if (entering) {
-      if (x > (rect.width * 0.9)) {
-        enterFromTmp = "right";
-      } else if (x < (rect.width * 0.1)) {
-        enterFromTmp = "left";
-      } else {
-        enterFromTmp = "other";
-      }
-
-      console.log("enter from " + enterFromTmp)
-      setEnterFrom(enterFromTmp)
-    } else {
-      if (x > (rect.width * 0.9)) {
-        leaveToTmp = "right";
-      } else if (x < (rect.width * 0.1)) {
-        leaveToTmp = "left";
-      } else {
-        leaveToTmp = "other";
-      }
-      
-      console.log("leave to " + leaveToTmp)
-      setEnterFrom(leaveToTmp)
-    }
-  };
-
-
-  return(
-    <div
-      style={{ padding: "0px 2px" }}
-      onMouseEnter={(e) => getDirection(e, true)}
-      onMouseLeave={(e) => getDirection(e)}
-    >
-      <MenuLink
-        enterFrom={enterFrom}
-        leaveTo={leaveTo}
-        href={item.path}
-        active={activePath === item.path}
-      >
-        {item.label}
-      </MenuLink>
-    </div>
-  )
-}
 
 
 export function ContactPopout(props) {
