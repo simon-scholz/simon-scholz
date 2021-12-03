@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { lightTheme as theme} from '../../styles/theme';
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
 
@@ -169,19 +169,13 @@ export const MenuLink = styled(A)`
   cursor: default;
   font-size: 12px;
   padding: 6px 12px;
-  margin-right: 4px;
   color: ${props =>
     props.active ? theme.colors.purpleDark : theme.colors.grey
   };
-  background: ${props =>
-    props.active ? "rgba(128, 90, 213, 0.14)" : "transparent"};
+  /* background: ${props =>
+    props.active ? "rgba(128, 90, 213, 0.14)" : "transparent"}; */
   border-radius: 4px;
-  &:hover {
-    color: ${theme.colors.purpleDark};
-    background: ${props =>
-  props.active ? "rgba(128, 90, 213, 0.14)" : " rgba(128, 90, 213, 0.05)"};
-    border-radius: 6px;
-  }
+  position: relative;
   width: 100%;
   margin-top: 8px;
   @media only screen and (min-width: ${theme.breakpoints[4]}) {
@@ -189,5 +183,77 @@ export const MenuLink = styled(A)`
     width: auto;
     margin-top: 0px;
   }
+  
+  /* box-shadow: inset 0 0 0 0 rgba(128, 90, 213, 0.05);
+  transition: ease-out 0.4s; */
+  &:hover {
+    color: ${theme.colors.purpleDark};
+    /* box-shadow: inset 400px 0 0 0 rgba(128, 90, 213, 0.05);
+    transition: ease-out 0.4s; */
+  }
+
+  position: relative;
+  overflow: hidden;
+  ${props => props.enterFrom === "left" && css`
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0;
+        right: 100%;
+        border-radius: 6px;
+        background: rgba(128, 90, 213, 0.05);
+        transition: ${theme.animations.hover};
+      }
+      &:hover:after {
+          right: 0px;
+          transition: ${theme.animations.hover};
+      }
+  `}
+  
+
+  ${props => props.enterFrom === "right" && css`
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 100%;
+        right: 0px;
+        border-radius: 6px;
+        background: rgba(128, 90, 213, 0.05);
+        transition: ${theme.animations.hover};
+      }
+      &:hover:after {
+          left: 0px;
+          transition: ${theme.animations.hover};
+      }
+  `}
+
+
+  ${props => props.enterFrom === "other" && css`
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border-radius: 6px;
+        background: rgba(128, 90, 213, 0.05);
+        opacity: 0;
+        transition: ${theme.animations.hover};
+      }
+      &:hover:after {
+          opacity: 1;
+          transition: ${theme.animations.hover};
+      }
+  `}
+
+  
 `
 
+// background: ${props => */
+    // props.active ? "rgba(128, 90, 213, 0.14)" : "rgba(128, 90, 213, 0.05)"};
+    //   border-radius: 6px;

@@ -72,6 +72,7 @@ export const lightTheme: DefaultTheme = {
   animations: {
     default: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
     hover: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
+    hoverOut: '0.15s cubic-bezier(0.165, 0.84, 0.44, 1)',
     active: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
   },
   colors: COLORS

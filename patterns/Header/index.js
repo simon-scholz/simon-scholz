@@ -60,12 +60,17 @@ export default function Header() {
     setMobileExpanded(false)
   }, [router])
 
+  
+
+  
   return(
     <Container>
       <StyledToolbar>
           <MainItems>
           {MENU_ITEMS.map((item, idx) => (
-            <Link key={"linkId_"+idx} href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
+            <Link key={"linkId_" + idx} href={item.path}>
+              <MenuItemAnimated idx={idx} item={item}/>
+            </Link>
           ))}
           </MainItems>
           {/* <MobileContainer>
@@ -97,6 +102,78 @@ export default function Header() {
         <Toaster position="top-right" containerStyle={{ position: "absolute", top: "80px", right: "12px" }} />
       
     </Container>
+  )
+}
+
+
+export const MenuItemAnimated = ({idx, item}) => {
+  const router = useRouter()
+  const [enterFrom, setEnterFrom] = useState("other")
+  const [leaveTo, setLeaveTo] = useState("other")
+  
+
+  let activePath = ''
+  let activeRoute = ''
+  if (router.pathname === '/') {
+    activeRoute = 'Home'
+    activePath = '/'
+  }
+  if (router.pathname.startsWith('/about')) {
+    activeRoute = 'About'
+    activePath = '/about'
+  }
+  if (router.pathname.startsWith('/work')) {
+    activeRoute = 'Case Studies'
+    activePath = '/work'
+  }
+
+  const getDirection = function (e, entering) {
+    var rect = e.target.getBoundingClientRect();
+    var x = e.clientX - rect.left; //x position within the element.
+    let enterFromTmp
+    let leaveToTmp
+
+    if (entering) {
+      if (x > (rect.width * 0.9)) {
+        enterFromTmp = "right";
+      } else if (x < (rect.width * 0.1)) {
+        enterFromTmp = "left";
+      } else {
+        enterFromTmp = "other";
+      }
+
+      console.log("enter from " + enterFromTmp)
+      setEnterFrom(enterFromTmp)
+    } else {
+      if (x > (rect.width * 0.9)) {
+        leaveToTmp = "right";
+      } else if (x < (rect.width * 0.1)) {
+        leaveToTmp = "left";
+      } else {
+        leaveToTmp = "other";
+      }
+      
+      console.log("leave to " + leaveToTmp)
+      setEnterFrom(leaveToTmp)
+    }
+  };
+
+
+  return(
+    <div
+      style={{ padding: "0px 2px" }}
+      onMouseEnter={(e) => getDirection(e, true)}
+      onMouseLeave={(e) => getDirection(e)}
+    >
+      <MenuLink
+        enterFrom={enterFrom}
+        leaveTo={leaveTo}
+        href={item.path}
+        active={activePath === item.path}
+      >
+        {item.label}
+      </MenuLink>
+    </div>
   )
 }
 
