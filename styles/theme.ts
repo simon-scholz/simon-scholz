@@ -1,13 +1,6 @@
 import { DefaultTheme } from "styled-components";
 import { COLORS } from './colors'
 
-declare module "styled-components" {
-  export interface DefaultTheme {
-    primaryColor: string;
-    secondaryColor: string;
-  }
-}
-
 export const lightTheme: DefaultTheme = {
   breakpoints: [
     '1440px', // 0
