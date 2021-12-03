@@ -77,10 +77,10 @@ export const lightTheme: DefaultTheme = {
   colors: COLORS
 };
 
-export const darkTheme: DefaultTheme = {
-  primaryColor: "#fff",
-  secondaryColor: "#cacaca",
-};
+// export const darkTheme: DefaultTheme = {
+//   primaryColor: "#fff",
+//   secondaryColor: "#cacaca",
+// };
 
 
 
