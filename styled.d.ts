@@ -1,6 +1,7 @@
 import 'styled-components';
 
 interface IColors {
+    midnightPlum: string
     black: string
     white: string
     snow: string
@@ -18,6 +19,13 @@ interface IColors {
     blue: string
     blueDark: string
 
+    purpleLight: string
+    purple: string,
+    purpleDark: string
+}
+
+
+interface IColorsDark {
     purpleLight: string
     purple: string,
     purpleDark: string
@@ -60,6 +68,8 @@ declare module 'styled-components' {
             hover: string
             active: string
         }
-        colors: IColors
+        colors: IColors,
+        colorsDark: IColorsDark,
+        themeLabel: string
     }
 }

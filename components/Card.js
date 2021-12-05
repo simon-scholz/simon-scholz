@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { lightTheme as theme} from '../styles/theme';
 
 const px = (v) => {
@@ -7,7 +7,8 @@ const px = (v) => {
 
 const Card = styled.div`
   margin: 32px 0px;
-  background: ${theme.colors.white};
+  background: var(--bg-level1);
+  border: 1px solid var(--border-level1);
   box-shadow: ${theme.shadows.list};
   -webkit-box-shadow: ${theme.shadows.default};
   font-family: Inter, -apple-system, sans-serif;
@@ -19,13 +20,14 @@ const Card = styled.div`
   justify-content: flex-start;
   width: 100%;
   height: auto;
-  border: 1px solid ${theme.colors.snowDark};
   border-radius: 8px;
   cursor: pointer;
   &:hover {
-    box-shadow: ${theme.shadows.listHover};
-    -webkit-box-shadow:  ${theme.shadows.listHover};
-    border: 1px solid ${theme.colors.snowDarker}
+    ${({ theme }) => theme.themeLabel === "light" && css`
+      box-shadow: ${theme.shadows.listHover};
+      -webkit-box-shadow:  ${theme.shadows.listHover};
+      border: 1px solid var(--border-level2);
+    ` }
     z-index: 1000;
   };
   transition: all ${theme.animations.hover};

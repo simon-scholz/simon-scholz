@@ -35,8 +35,8 @@ export const StyledToolbar = styled(ToolbarPrimitive.Root)`
     justify-content: space-between;
     width: 100%;
     border-radius: 6px;
-    background: ${theme.colors.white};
-    border: 1px solid ${theme.colors.snowDarker};
+    background: var(--bg-level1);
+    border: 1px solid var(--border-level1);
     box-shadow: ${theme.shadows.default};
     cursor: default;
     padding: 8px;
@@ -169,7 +169,7 @@ export const HoverBackground = styled.div`
   bottom: 10px;
   width: ${props => props.width};
   border-radius: 4px;
-  background: rgba(128, 90, 213, 0.05);
+  background: ${theme.colors.purpleHover};
   transform: translateX(${props => props.x});
   opacity: ${props => props.hide ? "0" : "1"};
   transition: transform ${props => props.hide ? "1ms" : "150ms"}, opacity 50ms;
@@ -181,10 +181,10 @@ export const MenuLink = styled(A)`
   font-size: 12px;
   padding: 6px 12px;
   color: ${props =>
-    props.active ? theme.colors.purpleDark : theme.colors.grey
+    props.active ? "var(--primary-hover)" : theme.colors.grey
   };
   background: ${props =>
-    props.active ? "rgba(128, 90, 213, 0.14)" : "transparent"};
+    props.active ? theme.colors.purpleActiveElement : "transparent"};
   border-radius: 4px;
   position: relative;
   width: 100%;

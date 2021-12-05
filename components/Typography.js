@@ -4,7 +4,7 @@ import { lightTheme as theme } from '../styles/theme'
 
 const heading = css`
   font-weight: ${theme.fontWeights.heading};
-  color: ${theme.colors.darkGrey};
+  color: var(--text-heading);
   line-height: ${theme.lineHeights.heading};
   letter-spacing: -0.4px;
 `
@@ -56,7 +56,7 @@ export const Mono = styled.p.attrs({
     font-weight: ${theme.fontWeights.body};
     line-height: ${theme.lineHeights.bodyLong};
     letter-spacing: -0.1px;
-    color: ${theme.colors.grey};
+    color: var(--text);
     transition: opacity 0.3s;
     margin-bottom: 0px;
     a {
@@ -104,14 +104,14 @@ export const Mono = styled.p.attrs({
     }
     a > code {
       padding: ${theme.space[0]} ${theme.space[1]};
-      box-shadow: inset 0 0 0 1px rgba(var(--purple), 0.16);
+      box-shadow: inset 0 0 0 1px rgba(var(--primary), 0.16);
       border-radius: 4px;
       display: inline-block;
-      background: rgba(var(--purple), 0.12);
-      color: var(--purple);
+      background: rgba(var(--primary), 0.12);
+      color: var(--primary);
     }
     a:hover > code {
-      background: rgba(var(--purple), 0.16);
+      background: rgba(var(--primary), 0.16);
     }
     &.show-more-enter, .show-more-appear {
       opacity: 0;
@@ -204,11 +204,11 @@ const arrows = css`
   .animated-arrow {
     .arrow-tip {
       fill: ${props =>
-        props.secondary ? theme.colors.concrete : theme.colors.blue};
+        props.secondary ? theme.colors.concrete : theme.colors.purple};
     }
     .arrow-base {
       stroke: ${props =>
-        props.secondary ? theme.colors.concrete : theme.colors.blue};
+        props.secondary ? theme.colors.concrete : theme.colors.purple};
     }
   }
   &:hover {
@@ -230,14 +230,14 @@ const arrows = css`
       .arrow-tip {
         transform: translateX(0px);
         fill: ${props =>
-          props.secondary ? theme.colors.black : theme.colors.blueDark};
+          props.secondary ? theme.colors.black : "var(--primary-hover)"};
         transition: transform 100ms cubic-bezier(0.165, 0.84, 0.44, 1);
       }
       .arrow-base {
         stroke-dasharray: 12;
         stroke-dashoffset: -12;
         stroke: ${props =>
-          props.secondary ? theme.colors.black : theme.colors.blueDark};
+          props.secondary ? theme.colors.black : "var(--primary-hover)"};
         animation: ${dash} 100ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       }
     }
@@ -256,7 +256,7 @@ const a = css`
   line-height: ${theme.lineHeights.body};
   letter-spacing: -0.1px;
   color: ${props =>
-    props.secondary ? theme.colors.concrete : theme.colors.blue};
+    props.secondary ? theme.colors.concrete : theme.colors.purple};
   text-decoration: none;
   font-weight: 500;
   word-break: break-word;
@@ -267,7 +267,7 @@ const a = css`
     cursor: pointer;
     text-decoration: none;
     color: ${props =>
-      props.secondary ? theme.colors.black : theme.colors.blueDark};
+      props.secondary ? theme.colors.black : "var(--primary-hover)"};
   }
 `
 
@@ -284,7 +284,7 @@ export const code = css`
   border-radius: 4px;
   display: inline-block;
   box-shadow: none;
-  background: var(--background);
+  background: var(--bg);
   text-shadow: none;
   @media (max-width: ${theme.breakpoints[4]}) {
     font-size: ${theme.fontSizes[0]};
@@ -367,7 +367,7 @@ const animatedArrow = css`
   display: inline-block;
   margin-left: 8px;
   .arrow-base {
-    stroke: ${theme.colors.blue};
+    stroke: ${theme.colors.purple};
     stroke-opacity: 1;
     stroke-dasharray: 12;
     stroke-dashoffset: -12;
@@ -375,7 +375,7 @@ const animatedArrow = css`
     animation: ${dashReverse} 200ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   .arrow-tip {
-    fill: ${theme.colors.blue};
+    fill: ${theme.colors.purple};
     transform: translateX(-4px);
     transition: transform ${theme.animations.default} ;
   }

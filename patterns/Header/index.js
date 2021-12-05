@@ -24,10 +24,13 @@ import {
 import Send from '../../components/icons/Send';
 import Menu from '../../components/icons/Menu';
 import Close from '../../components/icons/Close';
+import Moon from '../../components/icons/Moon';
+import Sun from '../../components/icons/Sun';
 import Toast from "../../components/Toast";
 
 import { HomeIcon, UserIcon, CollectionIcon } from '@heroicons/react/solid'
 import Collection from "../../components/icons/Collection";
+import { withTheme } from "styled-components";
 
 
 
@@ -37,7 +40,7 @@ const MENU_ITEMS = [
   { label: "Case Studies", path: "/work"},
 ]
 
-export default function Header() {
+const Header = ({ toggleTheme, theme }) => {
   const router = useRouter()
   const [mobileExpanded, setMobileExpanded] = useState(false);
   const [contactPopout, setContactPopout] = useState(false);
@@ -102,23 +105,7 @@ export default function Header() {
             </Link>
           ))}
           </MainItems>
-          {/* <MobileContainer>
-            {mobileExpanded ?
-              <div style={{display: "flex", flexDirection: "column", alignItems: "flex-start", width: "100%"}}>
-              <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Close /></IconButton>
-              <MobileMainItems>
-              {MENU_ITEMS.map((item) => (
-                <Link href={item.path}><MenuLink href={item.path} active={activePath === item.path}>{item.label}</MenuLink></Link>
-              ))}
-              </MobileMainItems>
-              </div>
-              :
-              <>
-              <IconButton onClick={() => setMobileExpanded(!mobileExpanded)}><Menu /></IconButton>
-              <LabelMobile>{activeRoute}</LabelMobile>
-              </>
-            }
-          </MobileContainer> */}
+        <IconButton onClick={toggleTheme}>{theme.themeLabel === "light" ? <Moon size={14} /> : <Sun size={14}/>}</IconButton>
           <ContactPopoutContainer>
             <ContactButton variant="cta" hide={mobileExpanded} onClick={() => setContactPopout(!contactPopout)}>Contact</ContactButton>
             {contactPopout &&
@@ -134,6 +121,8 @@ export default function Header() {
   )
 }
 
+
+export default withTheme(Header)
 
 
 

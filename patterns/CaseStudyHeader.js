@@ -13,7 +13,7 @@ const Title = styled(Heading1)`
 const StyledP = styled(P)`
   margin: 0px;
   font-size: ${theme.fontSizes[1]};
-  color: ${theme.colors.darkGrey};
+  color: var(--text-heading);
   font-weight: ${theme.fontWeights.body};
   b {
     font-weight: ${theme.fontWeights.subheading};

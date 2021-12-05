@@ -8,7 +8,7 @@ import Card, { CardContent, CardImage } from "../components/Card";
 const Title = styled.h4`
   font-weight: ${theme.fontWeights.subheading};
   line-height: ${theme.lineHeights.heading};
-  color: ${theme.colors.darkGrey};
+  color: var(--text-heading);
   letter-spacing: 0px;
   font-size: ${theme.fontSizes[2]};
   margin: ${theme.space[1]} 0px;

@@ -1,7 +1,7 @@
 import { DefaultTheme } from "styled-components";
-import { COLORS } from './colors'
+import { COLORS, COLORS_DARK } from './colors'
 
-export const lightTheme: DefaultTheme = {
+const baseTheme = {
   breakpoints: [
     '1440px', // 0
     '1256px', // 1
@@ -35,7 +35,7 @@ export const lightTheme: DefaultTheme = {
   ],
   fonts: {
     body:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     monospace: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace',
   },
   fontWeights: {
@@ -66,14 +66,23 @@ export const lightTheme: DefaultTheme = {
     default: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
     hover: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
     active: '0.35s cubic-bezier(0.165, 0.84, 0.44, 1)',
-  },
-  colors: COLORS
+  }
+}
+
+export const lightTheme: DefaultTheme = {
+  ...baseTheme,
+  colors: COLORS,
+  colorsDark: COLORS_DARK,
+  themeLabel: "light"
 };
 
-// export const darkTheme: DefaultTheme = {
-//   primaryColor: "#fff",
-//   secondaryColor: "#cacaca",
-// };
+export const darkTheme: DefaultTheme = {
+  ...baseTheme,
+  colors: COLORS,
+  colorsDark: COLORS_DARK,
+  themeLabel: "dark"
+};
+
 
 
 
