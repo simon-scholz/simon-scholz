@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
         --border-level3: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.snowDark : theme.colors.concrete};
 
         --text: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.black : theme.colors.snowDark};
+        --text-label: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.grey : theme.colors.smokeDark};
         --text-heading: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.darkGrey : theme.colors.smoke};
         /* --text-secondary: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.black : theme.colors.snowDark}; */
 
@@ -22,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
         --primary-dark: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.purpleDark : theme.colorsDark.purpleDark};
         --primary-hover: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.purpleDark : theme.colorsDark.purpleLight};
 
+        --primary-low-opacity: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.purpleLowOpacity : theme.colorsDark.purpleLowOpacity};
+
+        --input-bg: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.snowDark : theme.colors.black};
+        --input-bg-hover: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.snowDarker : theme.colors.black};
         
     }
 

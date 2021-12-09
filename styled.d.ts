@@ -2,6 +2,7 @@ import 'styled-components';
 
 interface IColors {
     midnightPlum: string
+    midnight: string
     black: string
     white: string
     snow: string
@@ -22,6 +23,7 @@ interface IColors {
     purpleLight: string
     purple: string,
     purpleDark: string
+    purpleLowOpacity: string
 }
 
 
@@ -29,6 +31,7 @@ interface IColorsDark {
     purpleLight: string
     purple: string,
     purpleDark: string
+    purpleLowOpacity: string
 }
 
 declare module 'styled-components' {

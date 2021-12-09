@@ -4,7 +4,7 @@ import { lightTheme as theme} from '../styles/theme';
 
 import { Heading2, P} from '../components/Typography'
 import Spacer from "../components/Utils"
-import {Button} from "../components/Actions"
+import {Button} from "../components/Button"
 
 
 const Main = styled.main`

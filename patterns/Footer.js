@@ -37,7 +37,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-top: 1px solid ${props => props.theme.colors.snowDarker};
+  border-top: 1px solid var(--border-level1);
 `
 
 const FooterLink = styled(A)`

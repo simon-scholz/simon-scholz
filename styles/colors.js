@@ -24,7 +24,7 @@ export const COLORS = {
   purpleDark: "#553C9A",
   purpleHover: "rgba(112, 73, 202, 0.06)",
   purpleActiveElement: "rgba(112, 73, 202, 0.15)",
-  
+  purpleLowOpacity: "rgba(112, 73, 202, 0.6)",
   
   blue: '#007AFF',
   blueDark: '#0062cc'
@@ -35,4 +35,5 @@ export const COLORS_DARK = {
   purpleLight: "#AC93E1",
   purple: "#7555BE", 
   purpleDark: "#5031A5",
+  purpleLowOpacity: "rgba(112, 73, 202, 0.5)",
 }

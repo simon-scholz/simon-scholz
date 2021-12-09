@@ -1,9 +1,8 @@
-import styled, { css } from 'styled-components'
+import React from "react"
+import styled from 'styled-components'
 import { lightTheme as theme} from '../styles/theme'
-import Card from "./Card"
 import Check from "./icons/Check"
 import Exclamation from "./icons/Exclamation"
-import { P } from "./Typography"
 
 const ToastBase = styled.div`
   font-family: Inter, -apple-system, sans-serif;
@@ -26,7 +25,7 @@ const ToastTextContent = styled.div`
   align-items: flex-start;
 `
 
-const Text = styled.p`
+const Text = styled.p<{bold?: boolean}>`
   font-size: ${theme.fontSizes[0]};
   font-weight: ${props => props.bold ? theme.fontWeights.bold : theme.fontWeights.body};
   line-height: ${theme.lineHeights.heading};
@@ -56,8 +55,13 @@ const Text = styled.p`
   }
 `
 
+interface IToast {
+  title: string
+  subtitle: React.ReactNode
+  type?: "error" | "success"
+}
 
-export function Toast({title, subtitle, type}) {
+export function Toast({ title, subtitle, type }: IToast) {
   return (
     <ToastBase>
       {type === "error" ?

@@ -28,7 +28,7 @@ const Card = styled.div`
       -webkit-box-shadow:  ${theme.shadows.listHover};
       border: 1px solid var(--border-level2);
     ` }
-    z-index: 1000;
+    z-index: 10;
   };
   transition: all ${theme.animations.hover};
   @media only screen and (min-width: ${theme.breakpoints[4]}) {

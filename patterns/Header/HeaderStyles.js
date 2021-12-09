@@ -3,9 +3,9 @@ import styled, {css} from "styled-components";
 import { lightTheme as theme} from '../../styles/theme';
 import * as ToolbarPrimitive from '@radix-ui/react-toolbar';
 
-import { Button } from '../../components/Actions'
+import { Button } from '../../components/Button'
 import { P, A } from '../../components/Typography'
-import Card from '../../components/Card'
+
 
 
 export const Container = styled.header`
@@ -14,7 +14,7 @@ export const Container = styled.header`
   left: 50%;
   transform: translateX(-50%);
   /* right: 0px; */
-  z-index: 4;
+  z-index: 20;
   font-weight: 600;
   font-size: 16px;
   -webkit-box-pack: center;
@@ -87,36 +87,6 @@ export const ContactButton = styled(Button)`
     }
   }
 `
-
-export const ContactPopoutBase = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-
-  margin: 0px;
-  border: 1px solid ${theme.colors.snowDarker};
-  box-shadow: ${theme.shadows.lightFromBelow};
-  padding: 16px;
-  button {
-    margin-bottom: 0px;
-  }
-  @media only screen and (min-width: ${theme.breakpoints[6]}) {
-    position: absolute;
-    left: auto;
-    bottom: auto;
-    right: -9px;
-    top: 44px;
-    width: 240px;
-    box-shadow: ${theme.shadows.default};
-  }
-`
-
-
 
 
 export const MainItems = styled.div`
