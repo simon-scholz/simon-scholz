@@ -17,7 +17,9 @@ const GlobalStyle = createGlobalStyle`
         --text-heading: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.darkGrey : theme.colors.smoke};
         /* --text-secondary: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.black : theme.colors.snowDark}; */
 
-        --text-link: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.black : theme.colors.snowDark};
+        --text-link: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.concrete : theme.colors.concrete};
+        --text-link-hover: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.black : theme.colors.silver};
+        --text-link-underline: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.smokeDarker : theme.colors.slate};
         
         --primary: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.purple : theme.colorsDark.purple};
         --primary-dark: ${({ theme }) => theme.themeLabel === "light" ? theme.colors.purpleDark : theme.colorsDark.purpleDark};

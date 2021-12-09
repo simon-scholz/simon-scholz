@@ -5,7 +5,7 @@ import { lightTheme as theme} from '../styles/theme';
 
 import { Heading1, Heading2, P, A, Rarr, TurnRight} from '../components/Typography'
 import Spacer from "../components/Utils"
-import { InlineButton } from '../components/Actions'
+import { InlineButton } from '../components/Button'
 
 
 const Main = styled.main`

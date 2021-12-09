@@ -60,8 +60,8 @@ export const Mono = styled.p.attrs({
     transition: opacity 0.3s;
     margin-bottom: 0px;
     a {
-      color: ${theme.colors.concrete};
-      background: ${theme.colors.concrete};
+      color: var(--text-link);
+      background: var(--text-link);
       -webkit-background-clip: text;
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -79,7 +79,7 @@ export const Mono = styled.p.attrs({
         border-radius: 1px;
         top: calc(100% + 2px);
         left: 0;
-        background: ${theme.colors.smokeDarker};
+        background: var(--text-link-underline);
       }
     }
     a:hover {
@@ -204,11 +204,11 @@ const arrows = css`
   .animated-arrow {
     .arrow-tip {
       fill: ${props =>
-        props.secondary ? theme.colors.concrete : theme.colors.purple};
+        props.secondary ? "var(--text-link)" : "var(--primary)"};
     }
     .arrow-base {
       stroke: ${props =>
-        props.secondary ? theme.colors.concrete : theme.colors.purple};
+        props.secondary ? "var(--text-link)" : "var(--primary)"};
     }
   }
   &:hover {
@@ -230,14 +230,14 @@ const arrows = css`
       .arrow-tip {
         transform: translateX(0px);
         fill: ${props =>
-          props.secondary ? theme.colors.black : "var(--primary-hover)"};
+          props.secondary ? "var(--text-link-hover)" : "var(--primary-hover)"};
         transition: transform 100ms cubic-bezier(0.165, 0.84, 0.44, 1);
       }
       .arrow-base {
         stroke-dasharray: 12;
         stroke-dashoffset: -12;
         stroke: ${props =>
-          props.secondary ? theme.colors.black : "var(--primary-hover)"};
+          props.secondary ? "var(--text-link-hover)" : "var(--primary-hover)"};
         animation: ${dash} 100ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       }
     }
@@ -256,7 +256,7 @@ const a = css`
   line-height: ${theme.lineHeights.body};
   letter-spacing: -0.1px;
   color: ${props =>
-    props.secondary ? theme.colors.concrete : theme.colors.purple};
+  props.secondary ? "var(--text-link)" : "var(--primary)"};
   text-decoration: none;
   font-weight: 500;
   word-break: break-word;
@@ -267,7 +267,7 @@ const a = css`
     cursor: pointer;
     text-decoration: none;
     color: ${props =>
-      props.secondary ? theme.colors.black : "var(--primary-hover)"};
+    props.secondary ? "var(--text-link-hover)" : "var(--primary-hover)"};
   }
 `
 
@@ -367,7 +367,7 @@ const animatedArrow = css`
   display: inline-block;
   margin-left: 8px;
   .arrow-base {
-    stroke: ${theme.colors.purple};
+    stroke: var(--primary);
     stroke-opacity: 1;
     stroke-dasharray: 12;
     stroke-dashoffset: -12;
@@ -375,7 +375,7 @@ const animatedArrow = css`
     animation: ${dashReverse} 200ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
   .arrow-tip {
-    fill: ${theme.colors.purple};
+    fill: var(--primary);
     transform: translateX(-4px);
     transition: transform ${theme.animations.default} ;
   }
