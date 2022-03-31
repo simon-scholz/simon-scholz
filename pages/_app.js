@@ -16,7 +16,7 @@ const Content = styled.div`
 
 
 export default function App({ Component, pageProps }) {
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState("light")
 
   const toggleTheme = () => {
     theme == 'light' ? setTheme('dark') : setTheme('light')

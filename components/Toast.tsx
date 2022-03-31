@@ -7,7 +7,7 @@ import Exclamation from "./icons/Exclamation"
 const ToastBase = styled.div`
   font-family: Inter, -apple-system, sans-serif;
   position: relative;
-  background: ${theme.colors.white};
+  background: var(--bg-level1);
   box-shadow: 1px solid ${theme.shadows.largeHover};
   -webkit-box-shadow: ${theme.shadows.default};
   padding: 16px 32px 16px 24px;
@@ -15,7 +15,7 @@ const ToastBase = styled.div`
   flex-direction: row;
   align-items: flex-start;
   gap: 16px;
-  border: 1px solid ${theme.colors.snowDarker};
+  border: 1px solid var(--border-level1);
   border-radius: 8px;
 `
 
@@ -23,36 +23,52 @@ const ToastTextContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: var(--text);
 `
 
 const Text = styled.p<{bold?: boolean}>`
+  color: var(--text);
   font-size: ${theme.fontSizes[0]};
   font-weight: ${props => props.bold ? theme.fontWeights.bold : theme.fontWeights.body};
   line-height: ${theme.lineHeights.heading};
-  color: ${theme.colors.slate};
   transition: opacity 0.3s;
   margin: 0px;
   padding: 4px;
   a {
-    color: ${theme.colors.concrete};
-    background: ${theme.colors.concrete};
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    text-decoration: none;
-    font-weight: 400;
-    word-break: break-word;
-    hyphens: auto;
-  }
-  a:hover {
-    text-decoration: none;
-    background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-  }
+      color: var(--text-link);
+      background: var(--text-link);
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      text-decoration: none;
+      font-weight: 400;
+      word-break: break-word;
+      hyphens: auto;
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        top: calc(100% + 2px);
+        left: 0;
+        background: var(--text-link-underline);
+      }
+    }
+    a:hover {
+      text-decoration: none;
+      background: -webkit-linear-gradient(left, rgba(244,199,62,1) -3.8%, rgba(244,62,62,1) 46.8%, rgba(245,61,195,1) 98.8% );
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+      &:after {
+        position: absolute;
+        display: none;
+      }
+    }
 `
 
 interface IToast {
@@ -65,9 +81,9 @@ export function Toast({ title, subtitle, type }: IToast) {
   return (
     <ToastBase>
       {type === "error" ?
-        <Exclamation color={theme.colors['accent-red'].light}/>
+        <Exclamation color={theme.colors.error}/>
         :
-        <Check color={theme.colors['accent-green'].light}/>
+        <Check color={theme.colors.success}/>
       }
       <ToastTextContent>
         <Text bold>{title}</Text>

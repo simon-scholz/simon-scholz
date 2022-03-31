@@ -113,6 +113,9 @@ export const Mono = styled.p.attrs({
     a:hover > code {
       background: rgba(var(--primary), 0.16);
     }
+    b {
+      font-weight: ${theme.fontWeights.bold};
+    }
     &.show-more-enter, .show-more-appear {
       opacity: 0;
       transition: opacity 0.3s;

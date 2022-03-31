@@ -23,6 +23,7 @@ export const FormField = styled.div`
 export const TextField = styled.input`
   width: 100%;
   border: none;
+  color: var(--text);
   background: var(--input-bg);
   padding: 12px ${theme.space[3]};
   border-radius: ${theme.space[2]};
@@ -39,6 +40,7 @@ export const TextField = styled.input`
 export const TextArea = styled.textarea`
   width: 100%;
   border: none;
+  color: var(--text);
   background: var(--input-bg);
   padding: 12px ${theme.space[3]};
   border-radius: ${theme.space[2]};

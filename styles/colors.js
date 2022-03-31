@@ -15,6 +15,8 @@ export const COLORS = {
   grey: '#343741',
   slate: '#424653',
 
+  success: '#34C759',
+  error: '#FF3B30',
 
   concrete: 'rgb(102, 116, 136)',
   silver: 'rgb(132, 146, 166)',

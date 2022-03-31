@@ -16,10 +16,10 @@ interface IColors {
     slate: string
     concrete: string
     silver: string
-    
+    success: string
+    error: string    
     blue: string
     blueDark: string
-
     purpleLight: string
     purple: string,
     purpleDark: string

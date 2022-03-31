@@ -4,7 +4,7 @@ import { lightTheme as theme} from '../styles/theme';
 
 import { Heading1, Heading2, P, A } from '../components/Typography'
 import CaseStudyCard from "../patterns/CaseStudyCard";
-import { InlineButton } from '../components/Actions'
+import { InlineButton } from '../components/Button'
 
 
 const Main = styled.main`

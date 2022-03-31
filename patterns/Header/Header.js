@@ -67,8 +67,8 @@ const Header = ({ toggleTheme, theme }) => {
     const position = rect.left - parent.left
 
     
-    setHideActiveElement(isActive)
-    setXActiveElement((position - 10)+"px")
+    // setHideActiveElement(isActive)
+    setXActiveElement((position - 11)+"px")
     setWidthActiveElement(width+"px")
   };
 
@@ -92,7 +92,7 @@ const Header = ({ toggleTheme, theme }) => {
             </Link>
           ))}
         </Styled.MainItems>
-        <IconButton onClick={toggleTheme}>{theme.themeLabel === "light" ? <Moon size={14} /> : <Sun size={14}/>}</IconButton>
+        {/* <IconButton onClick={toggleTheme}>{theme.themeLabel === "light" ? <Moon size={8} /> : <Sun size={8}/>}</IconButton> */}
         <Styled.ContactPopoutContainer>
           <Styled.ContactButton variant="cta" hide={mobileExpanded} onClick={() => setContactPopout(!contactPopout)}>Contact</Styled.ContactButton>
             {contactPopout &&
@@ -101,8 +101,8 @@ const Header = ({ toggleTheme, theme }) => {
         </Styled.ContactPopoutContainer>
         
       </Styled.StyledToolbar>
-        {/* <HeaderBackground /> */}
-        <Toaster position="top-right" containerStyle={{ position: "absolute", top: "80px", right: "12px" }} />
+        {/* <Styled.HeaderBackground /> */}
+        <Toaster position="top-right" containerStyle={{ position: "absolute", top: "60px", right: "0px" }} />
       
     </Styled.Container>
   )

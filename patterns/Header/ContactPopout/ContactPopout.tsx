@@ -17,44 +17,44 @@ const ContactPopout = ({onClose}: IContactPopout) => {
 
     const onSubmit = async (data) => {
         setLoading(true)
-        await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
-            },
-            body: JSON.stringify(data, null, 2)
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                if (data.success) {
-                    reset()
-                    document.activeElement.blur();
-                    toast.custom(
-                        <Toast
-                            title="Message successfully sent!"
-                            subtitle="I'll be in touch with you soon."
-                        />
-                        , { duration: 2000 })
-                    onClose()
-                } else {
+        // await fetch('https://api.web3forms.com/submit', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         Accept: 'application/json'
+        //     },
+        //     body: JSON.stringify(data, null, 2)
+        // })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         if (data.success) {
+        //             reset()
+        //             document.activeElement.blur();
+                    // toast.custom(
+                    //     <Toast
+                    //         title="Message successfully sent!"
+                    //         subtitle="I'll be in touch with you soon."
+                    //     />
+                    //     , { duration: 2000 })
+                    // onClose()
+            //     } else {
                     toast.custom(
                         <Toast
                             title="Something went wrong!"
                             subtitle={<span>If you still want to get in touch, send me an email to <a href="mailto:simonscholz@outlook.com">simonscholz@outlook.com</a></span>}
                             type="error" />
                     )
-                }
-            })
-            .catch(error => {
-                toast.custom(
-                    <Toast
-                        title="Something went wrong!"
-                        subtitle={<span>If you still want to get in touch, send me an email to <a href="mailto:simonscholz@outlook.com">simonscholz@outlook.com</a></span>}
-                        type="error" />
-                )
-            })
-            .finally(() => setLoading(false))
+            //     }
+            // })
+            // .catch(error => {
+            //     toast.custom(
+            //         <Toast
+            //             title="Something went wrong!"
+            //             subtitle={<span>If you still want to get in touch, send me an email to <a href="mailto:simonscholz@outlook.com">simonscholz@outlook.com</a></span>}
+            //             type="error" />
+            //     )
+            // })
+            // .finally(() => setLoading(false))
     };
 
     return (

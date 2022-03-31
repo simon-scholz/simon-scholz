@@ -39,7 +39,8 @@ export const StyledToolbar = styled(ToolbarPrimitive.Root)`
     border: 1px solid var(--border-level1);
     box-shadow: ${theme.shadows.default};
     cursor: default;
-    padding: 8px;
+    padding: 10px;
+    /* padding-bottom: 12px; */
 `
 
 export const HeaderBackground = styled.div`
@@ -65,7 +66,7 @@ export const ContactButton = styled(Button)`
   padding: 6px 12px;
   font-size: 12px;
   font-weight: 400;
-  cursor: default;
+  cursor: pointer;
   display: ${props =>
     props.hide ? "none" : "flex"};
   flex-direction: row;
@@ -135,8 +136,8 @@ export const LabelMobile = styled(P)`
 
 export const HoverBackground = styled.div`
   position: absolute;
-  top: 10px;
-  bottom: 10px;
+  top: 12px;
+  bottom: 12px;
   width: ${props => props.width};
   border-radius: 4px;
   background: ${theme.colors.purpleHover};
@@ -149,12 +150,12 @@ export const MenuLink = styled(A)`
   display: block;
   cursor: default;
   font-size: 12px;
-  padding: 6px 12px;
+  padding: 6px 8px;
   color: ${props =>
     props.active ? "var(--primary-hover)" : theme.colors.grey
   };
-  background: ${props =>
-    props.active ? theme.colors.purpleActiveElement : "transparent"};
+  /* background: ${props =>
+    props.active ? theme.colors.purpleActiveElement : "transparent"}; */
   border-radius: 4px;
   position: relative;
   width: 100%;
@@ -167,16 +168,25 @@ export const MenuLink = styled(A)`
   &:hover {
     color: ${theme.colors.purpleDark};
   }
-  /* ${props => props.active && css`
+  ${props => props.active && css`
     &:before {
       position: absolute;
-      content: " ";
-      width: calc(100% - 4px);
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      top: calc(100% + 1px);
+      left: calc(50% - 2px);
+      background: ${theme.colors.purpleLowOpacity};
+
+      /* position: absolute;
+      content: "";
+      width: calc(100% - 24px);
       height: 2px;
       border-radius: 2px;
       top: calc(100% + 2px);
-      left: 1px;
-      background: ${theme.colors.purpleDark};
+      left: 12px;
+      background: ${theme.colors.purple}; */
     }
-  `} */
+  `}
 `
