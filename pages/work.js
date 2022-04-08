@@ -59,12 +59,12 @@ export default function Work() {
         heroImg="/lino/hero.png"
         path="/work/lino"
       />
-      <CaseStudyCard
+      {/* <CaseStudyCard
         title="Logos & Branding"
         date="2019"
         heroImg="/branding/hero.png"
         path="/work/branding"
-      />
+      /> */}
     </Main>
   )
 }
