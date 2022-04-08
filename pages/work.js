@@ -36,10 +36,8 @@ export default function Work() {
       <Heading2>Case Studies</Heading2>
       <P>
       This page shows some of my previous projects.
-      For current work in progress bits and pieces have a look
-      at my <a href="https://dribbble.com/simonscholz" target="_blank" rel="noopener">Dribbble profile</a> or find me on <a href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener">Twitter</a>.
+        Curious to learn more? Contact me by using the contact form in the top right corner or via <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}><p>simonscholz@outlook.com</p></InlineButton>{copied && <i> (Copied!)</i>}.
       </P>
-      <P>Curious to learn more? Contact me via <InlineButton onClick={() => copyToClipboard("simonscholz@outlook.com")}><p>simonscholz@outlook.com</p></InlineButton>{copied && <i> (Copied!)</i>}.</P>
       <CaseStudyCard
         title="Pitchtable"
         role="Design and development lead"
