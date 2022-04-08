@@ -52,7 +52,7 @@ export default function Work() {
         heroImg="/cdf/hero.png"
         path="/work/cdf"
       />
-      {/* <CaseStudyCard
+      <CaseStudyCard
         title="Koch mit Lino"
         role="Indie Maker"
         date="2018"
