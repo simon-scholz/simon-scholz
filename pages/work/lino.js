@@ -106,7 +106,7 @@ export default function Lino() {
     <Spacer large />
     <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
     <Link href="/work"><A secondary>View more of my work<Rarr/></A></Link>
-    <Link href="/work/branding"><A>Go to next project<TurnRight/></A></Link>
+    {/* <Link href="/work/branding"><A>Go to next project<TurnRight/></A></Link> */}
     </div>
     </Main>
     </div>

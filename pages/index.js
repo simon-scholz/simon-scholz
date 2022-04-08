@@ -45,8 +45,13 @@ export default function Home() {
           Right now I'm a product manager and UX/UI lead at 360dialog, a global Facebook business solution provider, 
           enabling companies of all sizes and from all over the world to use WhatsApp.
         </P>
-      <Spacer small/>
-      <Link href="/about"><A>More about me<Rarr/></A></Link>
+        <P>I've previously co-founded CDF Technologies, where I led the design and creative direction of multiple B2B FinTech products
+          and design systems.
+        </P>
+        <P>
+          Before CDF I worked as an automotive engineer, specializing in thermal and mechanical load collective simulation of powertrain components.
+        </P>
+      
       <Spacer extraLarge/>
 
       <Heading2>Work</Heading2>
