@@ -23,7 +23,6 @@ import ContactPopout from "./ContactPopout"
 
 const MENU_ITEMS = [
   { label: "Home", path: "/"},
-  {label: "About", path: "/about"},
   { label: "Case Studies", path: "/work"},
 ]
 
@@ -37,10 +36,6 @@ const Header = ({ toggleTheme, theme }) => {
   if (router.pathname === '/') {
     activeRoute = 'Home'
     activePath = '/'
-  }
-  if (router.pathname.startsWith('/about')) {
-    activeRoute = 'About'
-    activePath = '/about'
   }
   if (router.pathname.startsWith('/work')) {
     activeRoute = 'Case Studies'
