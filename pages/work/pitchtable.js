@@ -30,7 +30,6 @@ export default function Pitchtable() {
       role="Design and development lead"
       date="2020"
       heroImg="/p/hero.png"
-      behanceLink="https://www.behance.net/gallery/101714751/Pitchtableio-User-Interface"
     />
       {Array.apply(null, { length: IMAGES[1]-IMAGES[0]+1 }).map((_, idx) => (
         <picture alt="Portfolio Screenshot - Project Pitchtable" key={"img_"+idx}>

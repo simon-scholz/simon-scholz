@@ -140,7 +140,7 @@ export const HoverBackground = styled.div`
   bottom: 12px;
   width: ${props => props.width};
   border-radius: 4px;
-  background: ${theme.colors.purpleHover};
+  background: ${theme.colors.snowDarker};
   transform: translateX(${props => props.x});
   opacity: ${props => props.hide ? "0" : "1"};
   transition: transform ${props => props.hide ? "1ms" : "150ms"}, opacity 50ms;
@@ -152,21 +152,17 @@ export const MenuLink = styled(A)`
   font-size: 12px;
   padding: 6px 8px;
   color: ${props =>
-    props.active ? "var(--primary-hover)" : theme.colors.grey
+    props.active ? theme.colors.black : theme.colors.concrete
   };
+  
   /* background: ${props =>
     props.active ? theme.colors.purpleActiveElement : "transparent"}; */
   border-radius: 4px;
   position: relative;
-  width: 100%;
-  margin-top: 8px;
-  @media only screen and (min-width: ${theme.breakpoints[4]}) {
-    font-size: 12px;
-    width: auto;
-    margin-top: 0px;
-  }
+  width: auto;
+  margin-top: 0px;
   &:hover {
-    color: ${theme.colors.purpleDark};
+    color: ${theme.colors.black};
   }
   ${props => props.active && css`
     &:before {
@@ -177,7 +173,7 @@ export const MenuLink = styled(A)`
       border-radius: 50%;
       top: calc(100% + 1px);
       left: calc(50% - 2px);
-      background: ${theme.colors.purpleLowOpacity};
+      background: ${theme.colors.smokeDarker};
 
       /* position: absolute;
       content: "";
