@@ -55,11 +55,12 @@ export default function Home() {
       <Spacer extraLarge/>
 
       <Heading2>Work</Heading2>
+      <Spacer />
       <WorkList /> 
       <Spacer extraLarge />
 
 
-      <Heading2>Case studies</Heading2>
+      {/* <Heading2>Case studies</Heading2>
       <P>These are some of my previous projects.</P>
       <Spacer small/>
       <Link href="/work"><A>View more of my work<Rarr/></A></Link>
@@ -77,7 +78,7 @@ export default function Home() {
         heroImg="/cdf/hero.png"
         path="/work/cdf"
       />
-      <Spacer large />
+      <Spacer large /> */}
 
     </Main>
     </div>

@@ -37,35 +37,73 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   border-top: 1px solid ${props => props.theme.colors.snowDarker};
 `
 
 const FooterLink = styled(A)`
-  font-size: 0.5rem;
-  opacity: 0.4;
-  margin-bottom: 4px;
-  margin-left: auto;
+  cursor: pointer;
+  font-size: ${theme.fontSizes[0]};
+  font-weight: ${theme.fontWeights.body};
+  line-height: ${theme.lineHeights.bodyLong};
+  letter-spacing: -0.1px;
+  transition: opacity 0.3s;
+  margin-bottom: 0px;
+  background: ${theme.colors.concrete};
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  color: ${theme.colors.concrete};
+  text-decoration: none;
+  font-weight: 400;
+  word-break: break-word;
+  hyphens: auto;
+  p {
+    margin: 0px;
+  }
   &:hover {
-    opacity: 1;
-    color: ${theme.colors.blue50};
+    p {
+      margin: 0px;
+      text-decoration: none;
+      background: -webkit-linear-gradient(
+        left,
+        rgba(244, 199, 62, 1) -3.8%,
+        rgba(244, 62, 62, 1) 46.8%,
+        rgba(245, 61, 195, 1) 98.8%
+      );
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+    }
+    text-decoration: none;
+    background: -webkit-linear-gradient(
+      left,
+      rgba(244, 199, 62, 1) -3.8%,
+      rgba(244, 62, 62, 1) 46.8%,
+      rgba(245, 61, 195, 1) 98.8%
+    );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
   }
-  @media only screen and (min-width: ${theme.breakpoints[7]}) {
-    font-size: 0.7rem;
-  }
-`
+`;
 
 function Footer() {
-  return(
-      <Outer>
-        <Container>
-          <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank" rel="noopener"><Dribbble className="icon"/></ClickableIcon>
-          {/* <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank" rel="noopener"><Behance className="icon" /></ClickableIcon> */}
-          <ClickableIcon href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener"><Twitter className="icon" /></ClickableIcon>
-          {/* <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank" rel="noopener"><Substack className="icon" /></ClickableIcon> */}
-          <Link href="/impressum"><FooterLink href="/impressum">Impressum – Legal Notice</FooterLink></Link>
-        </Container>
-      </Outer>
-  )
+  return (
+    <Outer>
+      <Container>
+        {/* <ClickableIcon href="https://dribbble.com/simonscholz" target="_blank" rel="noopener"><Dribbble className="icon"/></ClickableIcon> */}
+        {/* <ClickableIcon href="https://www.behance.net/simonscholz1" target="_blank" rel="noopener"><Behance className="icon" /></ClickableIcon> */}
+        {/* <ClickableIcon href="https://twitter.com/scholzsimon1" target="_blank" rel="noopener"><Twitter className="icon" /></ClickableIcon> */}
+        {/* <ClickableIcon href="https://simonscholz.substack.com/embed" target="_blank" rel="noopener"><Substack className="icon" /></ClickableIcon> */}
+        <FooterLink href="mailto:simonscholz@outlook.com">Contact</FooterLink>
+        <Link href="/impressum">
+          <FooterLink href="/impressum">Impressum – Legal Notice</FooterLink>
+        </Link>
+      </Container>
+    </Outer>
+  );
 }
 
 export default withTheme(Footer)
